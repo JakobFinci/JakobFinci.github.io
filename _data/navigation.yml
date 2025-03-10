@@ -5,9 +5,12 @@ main:
   url: /media/
   children:
     - title: "Photography"
-      url: /media/sprint1/
+      url: /media/photography/
+      children:
+        - title: "Noise Service Album Release Party"
+          url: /media/photography/noiseservice/
     - title: "Pixel Art"
-      url: /media/sprint2/
+      url: /media/pixelart/
 - title: "Project Portfolio"
   url: /projects/
   children:
