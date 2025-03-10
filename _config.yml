@@ -1,10 +1,14 @@
-theme: jekyll-theme-cayman
 title: Elias "Eliyahu" Suskind
-description: Welcome to my Portfolio Website!
-baseurl:      ""
-locale:       "en"
+email: eliassuskind@yahoo.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Welcome to my Portfolio Website!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: https://JakobFinci.github.io # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  JakobFinci
 
-# Formatting Stuff
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "neon"
+
 markdown: "kramdown"
 
 header:
