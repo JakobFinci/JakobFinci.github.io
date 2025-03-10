@@ -8,4 +8,4 @@ For licensing inquiries, please contact eliassuskind@yahoo.com.
 
 **EXCEPTIONS**
 
-All image media in the directory */media/photography/noiseservice* is licensed under Creative Commons Attribution-NoDerivatives 4.0 International by Elias "Eliyahu" Suskind and Annabelle Colleen Foster
+All image media in the directory */media/photography/noiseservice* (henceforth referred to as the "Noise Service Album Launch Party Collection") is licensed under Creative Commons Attribution-NoDerivatives 4.0 International by Elias "Eliyahu" Suskind and Annabelle Colleen Foster. Click [here](https://github.com/JakobFinci/JakobFinci.github.io/blob/main/media/photography/noiseservice/NOISESERVICELICENSE.md) for the licensing of said media collection
