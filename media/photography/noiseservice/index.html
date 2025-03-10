@@ -32,33 +32,76 @@
     </script>
 
     <style>
-        .media-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 20px;
-        }
-        .media-item {
-            text-align: center;
-        }
-        .media-item img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            image-rendering: pixelated; /* Keeps pixel art crisp */
-            image-rendering: crisp-edges; /* Backup for some browsers */
-        }
-        .media-item img:hover {
-            transform: scale(1.1);
-        }
         h1 {
         text-align: center;
     }
+        p {
+            padding: 20px;
+    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
     </style>
 </head>
 
-<!-- BODY HERE -->
+<body class="layout--single">
+
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <a class="site-title" href="/">Elias "Eliyahu" Suskind</a>
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item"><a href="/">Home</a></li>
+                        <li class="masthead__menu-item"><a href="/media/">Mixed Media Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/projects/">Project Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/contact/">About Me and Contact</a></li>
+                    </ul>
+                    <button class="greedy-nav__toggle hidden" type="button">
+                        <span class="visually-hidden">Toggle menu</span>
+                        <div class="navicon"></div>
+                    </button>
+                    <ul class="hidden-links hidden"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div> 
+
+    <h1>Noise Service Album Release Party</h1>
+
+
+    <p>
+        A raw and emotive collection of photographs capturing the night Noise Service released their debut album. 
+        Founded in 2021 in Seattle, WA, Noise Service has become a standout in the Seattle indie scene with their kaleidoscopic
+        fusion rock. Musicians Andy Mowdy, Corey Ray Zimmerman, Katharine McAllister, and Rolando Sotomayor Pino serve 
+        concert-goers a vibrant experience with powerful drumming, on-stage chemistry, wild guitar solos, and psychedelic 
+        effects. Fans recognize shoegaze, retro rock, and Latin influence in Noise Service. Unusual song structures and 
+        melodic storytelling generate the Noise Service experience. You can visit their website [here](https://www.noiseservice.com/contact)
+        or listen to their debut album [here](https://open.spotify.com/album/3vrXWsLLmtIh1r6jzfSq7t)
+
+    </p>
+
+    <div style="height: 50px;"></div> 
+
+    <p>All images below are the intellectual properties of Elias "Eliyahu" Suskind and Annabelle Colleen Foster. The images are licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)</p>
+
+    <section class="gallery">
+        <img src="../../../medialib/photography/noiseservice/_MG_2101.JPG" alt="Image 1">
+        <img src="../../../medialib/photography/noiseservice/_MG_2221.JPG" alt="Image 2">
+        <img src="../../../medialib/photography/noiseservice/_MG_2223.JPG" alt="Image 3">
+        <img src="../../../medialib/photography/noiseservice/_MG_2271.JPG" alt="Image 4">
+        <img src="../../../medialib/photography/noiseservice/_MG_2379.JPG" alt="Image 5">
+    </section>
+
 
 <div id="footer" class="page__footer">
   <footer>
