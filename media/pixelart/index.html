@@ -31,36 +31,56 @@
     }
     </script>
 
-    <style>
-        body {
+<style>
+    body {
         font-family: Arial, sans-serif;
         margin: 40px;
         text-align: center;
         color: #666;
-
     }
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        h2 {
-            color: #333;
-        }
-        h3 {
-            color: #333;
-        }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    h3 {
+        color: #333;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-items: center; /* Center images horizontally in grid cells */
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        image-rendering: pixelated; /* Keeps pixel art crisp */
+        image-rendering: crisp-edges; /* Backup for some browsers */
+    }
+
+    /* Ensure responsiveness for smaller screens */
+    @media (max-width: 768px) {
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
         }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            image-rendering: pixelated; /* Keeps pixel art crisp */
-            image-rendering: crisp-edges; /* Backup for some browsers */
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: 1fr; /* Stack images on small screens */
         }
+    }
+
+</style>
     </style>
 </head>
 
