@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Not Found</title>
     <style>
-        /* Make sure the body and html take up the full screen */
+        /* Ensure the body and html take up the full screen */
         html, body {
             height: 100%;
             margin: 0;
@@ -13,7 +13,7 @@
             overflow: hidden;
         }
 
-        /* Make video fill the entire screen */
+        /* Make the video fill the entire screen */
         video {
             position: absolute;
             top: 0;
@@ -29,7 +29,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: red;
+            color: white;
             font-size: 48px;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
@@ -37,15 +37,15 @@
     </style>
 </head>
 <body>
-    <!-- Full-screen autoplay video -->
-    <video autoplay muted loop>
-        <source src="https://www.youtube.com/embed/xvFZjo5PgG0?autoplay=1&loop=1&playlist=xvFZjo5PgG0" type="video/mp4">
+    <!-- Full-screen autoplay video with sound -->
+    <video autoplay loop>
+        <source src="medialib/404.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <!-- 404 Error Message -->
     <div class="error-message">
-        404 - Page Not Found
+        404 - Page Not Found... this video isn't my IP btw!
     </div>
 </body>
 </html>
