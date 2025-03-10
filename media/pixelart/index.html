@@ -51,34 +51,12 @@
     h3 {
         color: #333;
     }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        justify-items: center; /* Center images horizontally in grid cells */
-    }
-
-    .gallery img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        image-rendering: pixelated; /* Keeps pixel art crisp */
-        image-rendering: crisp-edges; /* Backup for some browsers */
-    }
-
-    /* Ensure responsiveness for smaller screens */
-    @media (max-width: 768px) {
-        .gallery {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .gallery {
-            grid-template-columns: 1fr; /* Stack images on small screens */
-        }
-    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+}
 
 </style>
     </style>
@@ -115,9 +93,8 @@
     <p>COMING SOON!</p>
     
 
-    <section class="gallery">
-        <img src="https://www.ipem-market.com/wp-content/uploads/Meme-No-rush.-Im-a-patient-bear..jpg" alt="Image 1">
-        <p style="font-size: 14px; color: #666;">Image source: IPEM</p>
+    <img src="https://www.ipem-market.com/wp-content/uploads/Meme-No-rush.-Im-a-patient-bear..jpg" alt="Image 1" class="center" >
+    <p style="font-size: 14px; color: #666;">Image source: IPEM</p>
     </section>
 
 
