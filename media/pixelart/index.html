@@ -32,33 +32,65 @@
     </script>
 
     <style>
-        .media-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 20px;
+        h1 {
+        text-align: center;
+        color:#333;
+    }
+        p {
+            padding: 20px;
+            color: #666;
+    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
-        .media-item {
-            text-align: center;
-        }
-        .media-item img {
-            width: 300px;
+        .gallery img {
+            width: 100%;
             height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            border-radius: 8px;
             image-rendering: pixelated; /* Keeps pixel art crisp */
             image-rendering: crisp-edges; /* Backup for some browsers */
         }
-        .media-item img:hover {
-            transform: scale(1.1);
-        }
-        h1 {
-        text-align: center;
-    }
     </style>
 </head>
 
-<!-- BODY HERE -->
+<body class="layout--single">
+
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <a class="site-title" href="/">Elias "Eliyahu" Suskind</a>
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item"><a href="/">Home</a></li>
+                        <li class="masthead__menu-item"><a href="/media/">Mixed Media Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/projects/">Project Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/contact/">About Me and Contact</a></li>
+                    </ul>
+                    <button class="greedy-nav__toggle hidden" type="button">
+                        <span class="visually-hidden">Toggle menu</span>
+                        <div class="navicon"></div>
+                    </button>
+                    <ul class="hidden-links hidden"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div> 
+
+    <h1>Pixel Art Portfolion</h1>
+
+
+    <p>COMING SOON!</p>
+    
+
+    <section class="gallery">
+        <img src="https://www.ipem-market.com/wp-content/uploads/Meme-No-rush.-Im-a-patient-bear..jpg" alt="Image 1">
+        <p style="font-size: 14px; color: #666;">Image source: IPEM</p>
+    </section>
+
 
 <div id="footer" class="page__footer">
   <footer>
