@@ -46,6 +46,8 @@
             height: auto;
             border-radius: 10px;
             transition: transform 0.3s;
+            image-rendering: pixelated; /* Keeps pixel art crisp */
+            image-rendering: crisp-edges; /* Backup for some browsers */
         }
         .media-item img:hover {
             transform: scale(1.1);
