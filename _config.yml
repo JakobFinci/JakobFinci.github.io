@@ -4,3 +4,21 @@ description: Welcome to my Portfolio Website!
 baseurl:      ""
 locale:       "en"
 
+# Formatting Stuff
+markdown: "kramdown"
+
+header:
+  show_overlay_excerpt: false
+
+plugins:
+  - jekyll-feed
+
+atom_feed:
+  hide: true
+
+defaults:
+  - values:
+      layout: single
+
+include:
+  - _pages
