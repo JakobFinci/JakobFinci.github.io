@@ -1,26 +1,191 @@
----
-layout: default
-title: Golden Ratio Alchemy
-description: Favorite shots from Golden Ratio Alchemy.
-main_class: content-wide
----
-<section class="section-offset">
-  <h1>Golden Ratio Alchemy</h1>
-  <p>I am one half of the photography duo <strong>Golden Ratio Alchemy</strong>. Our work blends creative vision with technical precision across portraits and events.</p>
-  <h2>April 2025</h2>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias "Eliyahu" Suskind</title>
+    <meta name="description" content="Welcome to my Portfolio Website.">
 
-  <section class="gallery" aria-label="Golden Ratio Alchemy highlights">
-    <a href="/medialib/photography/goldenr/APR/_MG_2817.jpeg" target="_blank"><img src="/medialib/photography/goldenr/APR/_MG_2817.jpeg" alt="PNW themed mural"></a>
-    <a href="/medialib/photography/goldenr/APR/_MG_2824.jpeg" target="_blank"><img src="/medialib/photography/goldenr/APR/_MG_2824.jpeg" alt="Miner's Landing at night"></a>
-    <a href="/medialib/photography/goldenr/APR/_MG_2875.jpeg" target="_blank"><img src="/medialib/photography/goldenr/APR/_MG_2875.jpeg" alt="Ivar's Seattle at night"></a>
-    <a href="/medialib/photography/goldenr/APR/_MG_2878.jpeg" target="_blank"><img src="/medialib/photography/goldenr/APR/_MG_2878.jpeg" alt="Seattle waterfront at night"></a>
-  </section>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Elias (Eliyahu) Suskind">
+    <meta property="og:title" content="Elias (Eliyahu) Suskind">
+    <meta property="og:url" content="https://JakobFinci.github.io/">
+    <meta property="og:description" content="Welcome to my Portfolio Website.">
 
-  <section class="gallery" aria-label="Cherry Dragon set">
-    {% assign cherry_dragon = "0.JPG,1.JPG,2.JPG,3.JPG,4.JPG,5.JPG,6.JPG,7.JPG,8.JPG,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg,16.jpg,17.jpg,18.jpg,19.jpg,20.jpg,21.jpg,22.jpg,23.jpg,24.jpg,25.jpg,26.jpg,27.jpg" | split: "," %}
-    {% for file in cherry_dragon %}
-      {% assign image_path = '/medialib/photography/goldenr/APR/cherrydragon/' | append: file %}
-      <a href="{{ image_path }}" target="_blank"><img src="{{ image_path }}" alt="Cherry Dragon photo {{ forloop.index0 }}"></a>
-    {% endfor %}
-  </section>
-</section>
+    <link rel="canonical" href="https://JakobFinci.github.io/">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Elias (Eliyahu) Suskind",
+        "url": "https://JakobFinci.github.io/"
+    }
+    </script>
+
+    <style>
+    h1 {
+        text-align: center;
+        color:#333;
+    }
+
+    h2 {
+        text-align: center;
+        color:#333;
+    }
+
+    p {
+        padding: 20px;
+        color: #666;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 200px; /* Set a fixed height for uniformity */
+        object-fit: cover; /* Ensures images cover the area while preserving aspect ratio */
+        border-radius: 8px;
+    }
+
+    /* Ensure responsiveness for smaller screens */
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: 1fr; /* Stack images on small screens */
+        }
+    }
+    </style>
+</head>
+
+<body class="layout--single">
+
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <a class="site-title" href="/">Elias "Eliyahu" Suskind</a>
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item"><a href="/">Home</a></li>
+                        <li class="masthead__menu-item"><a href="/media/">Mixed Media Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/projects/">Project Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/contact/">About Me and Contact</a></li>
+                    </ul>
+                    <button class="greedy-nav__toggle hidden" type="button">
+                        <span class="visually-hidden">Toggle menu</span>
+                        <div class="navicon"></div>
+                    </button>
+                    <ul class="hidden-links hidden"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div> 
+
+    <h1>Golden Ratio Alchemy</h1>
+
+
+    <p>
+        I am one half of the photography duo <strong>Golden Ratio Alchemy</strong>, a collaborative project 
+        that blends creative vision with technical precision to capture striking, meaningful moments. 
+        Our work ranges from conceptual editorial shoots to candid portraits and event coverage, with an emphasis on balance, detail, and natural light. 
+        We believe in the magic of visual storytelling and strive to create images that feel timeless and intentional. Here are some of my personal favorite photos I've taken for GRA.
+    </p>
+    
+    <h2>April 2025</h2>
+
+        <section class="gallery">
+            <a href="../../../medialib/photography/goldenr/APR/_MG_2817.jpeg" target="_blank"><img src="../../../medialib/photography/goldenr/APR/_MG_2817.jpeg" alt="PNW Themed Mural, Credit: Annabelle Foster"></a>
+            <a href="../../../medialib/photography/goldenr/APR/_MG_2824.jpeg" target="_blank"><img src="../../../medialib/photography/goldenr/APR/_MG_2824.jpeg" alt="Miner's Landing at Night, Credit: Annabelle Foster"></a>
+            <a href="../../../medialib/photography/goldenr/APR/_MG_2875.jpeg" target="_blank"><img src="../../../medialib/photography/goldenr/APR/_MG_2875.jpeg" alt="Ivar's Seattle at Night I, Credit: Eliyahu Suskind"></a>
+            <a href="../../../medialib/photography/goldenr/APR/_MG_2878.jpeg" target="_blank"><img src="../../../medialib/photography/goldenr/APR/_MG_2878.jpeg" alt="Ivar's Seattle at Night II, Credit: Eliyahu Suskind"></a>
+        </section>
+
+        <section class="gallery">
+        <a href="../../../medialib/photography/goldenr/APR/cherrydragon/0.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/0.JPG" alt="Cherry Dragon Photo 0, Credit: Eliyahu Suskind"></a>
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/1.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/1.JPG" alt="Cherry Dragon Photo 1, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/2.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/2.JPG" alt="Cherry Dragon Photo 2, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/3.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/3.JPG" alt="Cherry Dragon Photo 3, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/4.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/4.JPG" alt="Cherry Dragon Photo 4, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/5.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/5.JPG" alt="Cherry Dragon Photo 5, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/6.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/6.JPG" alt="Cherry Dragon Photo 6, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/7.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/7.JPG" alt="Cherry Dragon Photo 7, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/8.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/8.JPG" alt="Cherry Dragon Photo 8, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/9.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/9.JPG" alt="Cherry Dragon Photo 9, Credit: Eliyahu Suskind"></a>     
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/10.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/10.JPG" alt="Cherry Dragon Photo 10, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/11.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/11.JPG" alt="Cherry Dragon Photo 11, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/12.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/12.JPG" alt="Cherry Dragon Photo 12, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/13.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/13.JPG" alt="Cherry Dragon Photo 13, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/14.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/14.JPG" alt="Cherry Dragon Photo 14, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/15.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/15.JPG" alt="Cherry Dragon Photo 15, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/16.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/16.JPG" alt="Cherry Dragon Photo 16, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/17.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/17.JPG" alt="Cherry Dragon Photo 17, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/18.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/18.JPG" alt="Cherry Dragon Photo 18, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/19.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/19.JPG" alt="Cherry Dragon Photo 19, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/20.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/20.JPG" alt="Cherry Dragon Photo 20, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/21.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/21.JPG" alt="Cherry Dragon Photo 21, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/22.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/22.JPG" alt="Cherry Dragon Photo 22, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/23.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/23.JPG" alt="Cherry Dragon Photo 23, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/24.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/24.JPG" alt="Cherry Dragon Photo 24, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/25.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/25.JPG" alt="Cherry Dragon Photo 25, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/26.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/26.JPG" alt="Cherry Dragon Photo 26, Credit: Eliyahu Suskind"></a>  
+    <a href="../../../medialib/photography/goldenr/APR/cherrydragon/27.JPG" target="_blank"><img src="../../../medialib/photography/goldenr/APR/cherrydragon/27.JPG" alt="Cherry Dragon Photo 27, Credit: Eliyahu Suskind"></a> 
+        </section>
+
+
+<div id="footer" class="page__footer">
+  <footer>
+    <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+    <div class="page__footer-follow">
+<ul class="social-icons">
+
+
+
+
+
+</ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Elias "Eliyahu" Suskind. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+  </footer>
+</div>
+
+
+<script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+</html>

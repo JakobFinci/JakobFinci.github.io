@@ -1,18 +1,171 @@
----
-layout: default
-title: Noise Service Album Release Party
-description: Photography from Noise Service's album release show.
-main_class: content-wide
----
-<section class="section-offset">
-  <h1>Noise Service Album Release Party</h1>
-  <p>A raw and emotive collection of photographs capturing the night Noise Service released their debut album. Visit their <a href="https://www.noiseservice.com/contact" target="_blank" rel="noopener">website</a> or listen on <a href="https://open.spotify.com/album/3vrXWsLLmtIh1r6jzfSq7t" target="_blank" rel="noopener">Spotify</a>.</p>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias "Eliyahu" Suskind</title>
+    <meta name="description" content="Welcome to my Portfolio Website.">
 
-  <section class="gallery" aria-label="Noise Service photo gallery">
-    {% assign photos = "_MG_1965,_MG_2075,_MG_2101,_MG_2221,_MG_2223,_MG_2227,_MG_2261,_MG_2264,_MG_2271,_MG_2272,_MG_2290,_MG_2295,_MG_2327,_MG_2361,_MG_2379,_MG_2415,_MG_2487,_MG_2499" | split: "," %}
-    {% for photo in photos %}
-      {% assign path = '/medialib/photography/noiseservice/' | append: photo | append: '.JPG' %}
-      <a href="{{ path }}" target="_blank"><img src="{{ path }}" alt="Noise Service photo {{ forloop.index }}"></a>
-    {% endfor %}
-  </section>
-</section>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Elias (Eliyahu) Suskind">
+    <meta property="og:title" content="Elias (Eliyahu) Suskind">
+    <meta property="og:url" content="https://JakobFinci.github.io/">
+    <meta property="og:description" content="Welcome to my Portfolio Website.">
+
+    <link rel="canonical" href="https://JakobFinci.github.io/">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Elias (Eliyahu) Suskind",
+        "url": "https://JakobFinci.github.io/"
+    }
+    </script>
+
+    <style>
+    h1 {
+        text-align: center;
+        color:#333;
+    }
+
+    p {
+        padding: 20px;
+        color: #666;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 200px; /* Set a fixed height for uniformity */
+        object-fit: cover; /* Ensures images cover the area while preserving aspect ratio */
+        border-radius: 8px;
+    }
+
+    /* Ensure responsiveness for smaller screens */
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: 1fr; /* Stack images on small screens */
+        }
+    }
+    </style>
+</head>
+
+<body class="layout--single">
+
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <a class="site-title" href="/">Elias "Eliyahu" Suskind</a>
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item"><a href="/">Home</a></li>
+                        <li class="masthead__menu-item"><a href="/media/">Mixed Media Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/projects/">Project Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/contact/">About Me and Contact</a></li>
+                    </ul>
+                    <button class="greedy-nav__toggle hidden" type="button">
+                        <span class="visually-hidden">Toggle menu</span>
+                        <div class="navicon"></div>
+                    </button>
+                    <ul class="hidden-links hidden"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div> 
+
+    <h1>Noise Service Album Release Party</h1>
+
+
+    <p>
+        A raw and emotive collection of photographs capturing the night Noise Service released their debut album. 
+        Founded in 2021 in Seattle, WA, Noise Service has become a standout in the Seattle indie scene with their kaleidoscopic
+        fusion rock. Musicians Andy Mowdy, Corey Ray Zimmerman, Katharine McAllister, and Rolando Sotomayor Pino serve 
+        concert-goers a vibrant experience with powerful drumming, on-stage chemistry, wild guitar solos, and psychedelic 
+        effects. Fans recognize shoegaze, retro rock, and Latin influence in Noise Service. Unusual song structures and 
+        melodic storytelling generate the Noise Service experience. <br><br> You can visit their website <a href="https://www.noiseservice.com/contact" target="_blank">here</a>
+        or listen to their debut album <a href="https://open.spotify.com/album/3vrXWsLLmtIh1r6jzfSq7t" target="_blank">here.</a>
+        <br><br>All images below are the intellectual properties of Elias "Eliyahu" Suskind and Annabelle Colleen Foster. The images are licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank">CC BY-ND 4.0</a></p>
+    
+
+        <section class="gallery">
+            <a href="../../../medialib/photography/noiseservice/_MG_1965.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_1965.JPG" alt="Image 1"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2075.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2075.JPG" alt="Image 2"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2101.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2101.JPG" alt="Image 3"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2221.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2221.JPG" alt="Image 4"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2223.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2223.JPG" alt="Image 5"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2227.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2227.JPG" alt="Image 6"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2261.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2261.JPG" alt="Image 7"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2264.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2264.JPG" alt="Image 8"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2271.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2271.JPG" alt="Image 9"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2272.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2272.JPG" alt="Image 10"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2290.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2290.JPG" alt="Image 11"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2295.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2295.JPG" alt="Image 12"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2327.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2327.JPG" alt="Image 13"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2361.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2361.JPG" alt="Image 14"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2379.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2379.JPG" alt="Image 15"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2415.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2415.JPG" alt="Image 16"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2487.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2487.JPG" alt="Image 17"></a>
+            <a href="../../../medialib/photography/noiseservice/_MG_2499.JPG" target="_blank"><img src="../../../medialib/photography/noiseservice/_MG_2499.JPG" alt="Image 18"></a>
+        </section>
+
+
+<div id="footer" class="page__footer">
+  <footer>
+    <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+    <div class="page__footer-follow">
+<ul class="social-icons">
+
+
+
+
+
+</ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Elias "Eliyahu" Suskind. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+  </footer>
+</div>
+
+
+<script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+</html>
