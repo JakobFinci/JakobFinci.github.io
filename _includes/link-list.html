@@ -1,0 +1,12 @@
+<ul class="link-list">
+  {% for item in include.items %}
+  <li class="link-list__item">
+    {% if item.href == "#" %}
+      <span class="link-list__title">{{ item.title }}</span>
+    {% else %}
+      <a class="link-list__title" href="{{ item.href }}">{{ item.title }}</a>
+    {% endif %}
+    <p class="link-list__description">{{ item.description }}</p>
+  </li>
+  {% endfor %}
+</ul>
