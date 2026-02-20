@@ -1,0 +1,19 @@
+<header class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
+        <a class="site-title" href="/">{{ site.title }}</a>
+        <ul class="visible-links">
+          {% for item in site.data.navigation %}
+          <li class="masthead__menu-item"><a href="{{ item.href }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <button class="greedy-nav__toggle hidden" type="button" aria-label="Toggle menu">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</header>
