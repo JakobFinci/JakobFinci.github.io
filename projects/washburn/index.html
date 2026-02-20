@@ -32,68 +32,46 @@
     </script>
 
     <style>
-        .media-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 20px;
-        }
-        .media-item {
-            text-align: center;
-        }
-        .media-item img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            image-rendering: pixelated; /* Keeps pixel art crisp */
-            image-rendering: crisp-edges; /* Backup for some browsers */
-        }
-        .media-item img:hover {
-            transform: scale(1.1);
-        }
-        h1 {
-        text-align: center;
-    }
+        h1 { text-align: center; color: #333; }
     </style>
 </head>
 
-<h1>COMING SOON!</h1>
+<body class="layout--single">
 
-<div id="footer" class="page__footer">
-  <footer>
-    <!-- start custom footer snippets -->
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <a class="site-title" href="/">Elias "Eliyahu" Suskind</a>
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item"><a href="/">Home</a></li>
+                        <li class="masthead__menu-item"><a href="/media/">Mixed Media Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/projects/">Project Portfolio</a></li>
+                        <li class="masthead__menu-item"><a href="/contact/">About Me and Contact</a></li>
+                    </ul>
+                    <button class="greedy-nav__toggle hidden" type="button">
+                        <span class="visually-hidden">Toggle menu</span>
+                        <div class="navicon"></div>
+                    </button>
+                    <ul class="hidden-links hidden"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 
-<!-- end custom footer snippets -->
-    <div class="page__footer-follow">
-<ul class="social-icons">
+    <div style="height: 50px;"></div>
 
+    <h1>COMING SOON!</h1>
 
+    <div id="footer" class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+            <ul class="social-icons"></ul>
+        </div>
+        <div class="page__footer-copyright">&copy; 2025 Elias "Eliyahu" Suskind. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </footer>
+    </div>
 
-
-
-</ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2025 Elias "Eliyahu" Suskind. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-  </footer>
-</div>
-
-
-<script src="/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
+    <script src="/assets/js/main.min.js"></script>
 </body>
-</html>
-
-
 </html>
