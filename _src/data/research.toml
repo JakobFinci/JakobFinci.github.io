@@ -1,0 +1,51 @@
+# Research and publications. Rendered on /research/ and per-paper detail pages.
+#
+# Citation facts are verified against the public record (see verified_source).
+# Body prose is migrated from the previous site's paper pages, lightly edited.
+
+[[paper]]
+slug = "eoe-therapies"
+url = "/research/eoe-therapies/"
+title = "Current and Emerging Therapies for Eosinophilic Esophagitis (EoE): A Comprehensive Review"
+kind = "Peer-reviewed review"
+authors = [
+  "Brooke G. Musburger",
+  "Maria Gonzalez Echeandia",
+  "Elias L. Suskind",
+  "David L. Suskind",
+  "Hengqi Betty Zheng",
+  "Dominique Mark",
+]
+author_self = "Elias L. Suskind"
+venue = "Pharmaceutics"
+year = "2025"
+month = "June"
+doi = "10.3390/pharmaceutics17060753"
+external_url = "https://doi.org/10.3390/pharmaceutics17060753"
+external_label = "Read the paper (open access)"
+pmc_url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12196940/"
+verified_source = "PubMed Central PMC12196940; DOI 10.3390/pharmaceutics17060753"
+related_project = "eoe-review"
+figure = "/medialib/EoE/index.jpg"
+figure_alt = "Diagram of biologic agent target sites of action along the type-2 inflammatory pathway in eosinophilic esophagitis"
+order = 1
+lead = "A comprehensive review of established and emerging treatments for eosinophilic esophagitis, from dietary elimination and PPIs to the newest biologic agents in clinical trials."
+
+[[paper]]
+slug = "puerh-tea"
+url = "/research/puerh-tea/"
+title = "Aging Gracefully: Exploring the Impact of Aging on the Quantitative and Qualitative Characteristics of Pu'erh Tea"
+kind = "Undergraduate thesis · NCUR 2024"
+authors = ["Elias Suskind"]
+author_self = "Elias Suskind"
+venue = "National Conference on Undergraduate Research (NCUR) 2024; Babson College"
+year = "2024"
+month = "April"
+external_url = "https://www.researchgate.net/publication/384114759_Aging_Gracefully_Exploring_the_Impact_of_Aging_on_the_Quantitative_and_Qualitative_Characteristics_of_Pu'erh_Tea"
+external_label = "Read the study on ResearchGate"
+verified_source = "ResearchGate publication 384114759"
+related_project = "puerh-tea"
+figure = "/medialib/tea/flowchart.png"
+figure_alt = "Flowchart of the study's data-analysis pipeline, from CSV ingestion through statistical correlation"
+order = 2
+lead = "An undergraduate thesis correlating the chemistry of post-fermented pu'erh tea with blind sensory evaluations, aiming at objective, science-backed quality standards for a booming but loosely regulated market."

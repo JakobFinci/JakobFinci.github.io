@@ -1,0 +1,75 @@
+        <h2>Introduction</h2>
+        <p>Pu'erh tea is a culturally significant, economically valuable fermented tea from China, known for its aging process and complex flavor development. This study analyzes six pu'erh samples — three shou (ripe) and three sheng (raw) — using both chemical analysis and sensory surveys, aiming to establish objective standards for pu'erh quality and pricing in a booming but inconsistently regulated market.</p>
+
+        <h2>Why it matters</h2>
+        <p>Despite the pu'erh market's valuation at over 22 billion yuan, quality assessment remains subjective and speculative. This project correlates measurable chemical attributes — such as total polyphenol content (TPC) — with sensory evaluations, to support more transparent, science-backed pricing standards.</p>
+
+        <h2>Background &amp; context</h2>
+        <p>Pu'erh differs from other teas because of its fermentation and aging, which lead to evolving flavors. Yet scientific analysis of pu'erh's chemical and sensory changes over time remains rare. This study controls for terroir, cultivar, and fermentation method, blending lab assays with trained-sommelier evaluations to fill a gap in the field.</p>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Table 1 — How this study differs from prior work</caption>
+            <thead>
+              <tr><th>Aspect</th><th>Basic tea chemistry studies</th><th>General sensory studies</th><th>This study</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tea type focus</td><td>Mostly green, black, oolong</td><td>Mixed varieties, rarely pu'erh</td><td>Exclusive focus on shou and sheng pu'erh across aging windows</td></tr>
+              <tr><td>Fermentation style</td><td>Rarely considered</td><td>Sometimes referenced</td><td>Isolated and analyzed independently</td></tr>
+              <tr><td>Control of variables</td><td>Often inconsistent</td><td>None</td><td>Controlled for terroir, cultivar, brewing</td></tr>
+              <tr><td>Chemical analysis</td><td>Present but not linked to flavor</td><td>Absent or minimal</td><td>Lab-tested TPC via Folin–Ciocalteu assay</td></tr>
+              <tr><td>Flavor profiling</td><td>Often absent</td><td>Untrained participants</td><td>Structured survey with certified sommeliers</td></tr>
+              <tr><td>Quantitative–qualitative link</td><td>Generalized</td><td>Flavor only</td><td>Statistical correlation between TPC and flavor/quality</td></tr>
+              <tr><td>Aging factor</td><td>Absent</td><td>Absent</td><td>Comparative 3-year aging analysis</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Method</h2>
+        <p>The project developed a hybrid testing framework blending chemical analysis and expert sensory evaluation, controlling for variables like terroir and brewing conditions to keep results accurate and repeatable.</p>
+        <h3>Design goals</h3>
+        <ul>
+          <li>Standardized comparison across fermentation types and years</li>
+          <li>Minimized variability by controlling terroir, cultivar, and brewing</li>
+          <li>Accessible lab and survey techniques for replication</li>
+          <li>Objective chemical data combined with sensory feedback</li>
+        </ul>
+        <h3>Experimental system</h3>
+        <ul>
+          <li>Sample set: six pu'erh teas (three shou, three sheng) from 2021–2023</li>
+          <li>Chemical analysis: total polyphenol content via the Folin–Ciocalteu assay</li>
+          <li>Sensory survey: blind tastings by 10 certified sommeliers</li>
+        </ul>
+        <h3>Analysis pipeline</h3>
+        <ul>
+          <li>Data ingestion via CSV and pandas</li>
+          <li>Sample segmentation for per-tea analysis</li>
+          <li>TPC integration with sensory-survey results</li>
+          <li>Statistics: means, correlations, error bars, heatmaps (see Fig. 1)</li>
+        </ul>
+
+        <h2>Results</h2>
+        <h3>Chemical test (TPC)</h3>
+        <ul>
+          <li>Minimal TPC change in sheng pu'erh over three years</li>
+          <li>Year-to-year TPC fluctuations in shou pu'erh</li>
+          <li>Short-term aging showed limited impact on TPC</li>
+        </ul>
+        <figure class="figure">
+          <a href="/medialib/tea/TPC.png" target="_blank" rel="noopener"><img src="/medialib/tea/TPC.png" alt="Chart of total polyphenol content across the six pu'erh samples and harvest years" width="797" height="550" loading="lazy" decoding="async"></a>
+          <figcaption><span class="n">FIG. 2</span> — Total polyphenol content by sample and year.</figcaption>
+        </figure>
+
+        <h3>Sensory evaluation (flavor &amp; perceived quality)</h3>
+        <ul>
+          <li>Sheng teas showed a slight increase in perceived quality over time</li>
+          <li>Strong correlation between TPC and perceived quality for shou teas (Pearson R = 0.999, p = 0.028)</li>
+          <li>Specific flavor descriptors correlated with perceived quality</li>
+        </ul>
+        <div class="gallery">
+          <figure><a href="/medialib/tea/matrix1.png" target="_blank" rel="noopener"><img src="/medialib/tea/matrix1.png" alt="Correlation matrix relating flavor descriptors to perceived quality, part 1" width="683" height="607" loading="lazy" decoding="async" style="height:auto"></a><figcaption><span class="n">FIG. 3</span><span>Flavor–quality correlation matrix (I)</span></figcaption></figure>
+          <figure><a href="/medialib/tea/matrix2.png" target="_blank" rel="noopener"><img src="/medialib/tea/matrix2.png" alt="Correlation matrix relating flavor descriptors to perceived quality, part 2" width="738" height="683" loading="lazy" decoding="async" style="height:auto"></a><figcaption><span class="n">FIG. 4</span><span>Flavor–quality correlation matrix (II)</span></figcaption></figure>
+        </div>
+
+        <h2>Future work</h2>
+        <p>Future research should explore longer aging periods to pin down when significant chemical and sensory changes occur. Deeper study of fermentation conditions — temperature and humidity during wodui — could optimize shou pu'erh quality. Expanding the participant pool and extending timelines will help refine the relationship between pu'erh chemotype and market valuation.</p>

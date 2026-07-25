@@ -1,0 +1,10 @@
+# Python tooling caches (image/build scripts under _src/tools).
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor cruft.
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,0 +1,702 @@
+{
+ "medialib/photography/goldenr/APR/_MG_2817.jpeg": {
+  "display": {
+   "h": 904,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2817.display.webp",
+   "w": 1400
+  },
+  "h": 3342,
+  "thumb": {
+   "h": 413,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2817.thumb.webp",
+   "w": 640
+  },
+  "w": 5176
+ },
+ "medialib/photography/goldenr/APR/_MG_2824.jpeg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2824.display.webp",
+   "w": 888
+  },
+  "h": 5155,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2824.thumb.webp",
+   "w": 406
+  },
+  "w": 3270
+ },
+ "medialib/photography/goldenr/APR/_MG_2875.jpeg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2875.display.webp",
+   "w": 933
+  },
+  "h": 5140,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2875.thumb.webp",
+   "w": 427
+  },
+  "w": 3427
+ },
+ "medialib/photography/goldenr/APR/_MG_2878.jpeg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2878.display.webp",
+   "w": 1400
+  },
+  "h": 3427,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/_MG_2878.thumb.webp",
+   "w": 640
+  },
+  "w": 5140
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/0.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/0.display.webp",
+   "w": 1400
+  },
+  "h": 1365,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/0.thumb.webp",
+   "w": 640
+  },
+  "w": 2048
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/1.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/1.display.webp",
+   "w": 804
+  },
+  "h": 2048,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/1.thumb.webp",
+   "w": 368
+  },
+  "w": 1176
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/10.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/10.display.webp",
+   "w": 933
+  },
+  "h": 5115,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/10.thumb.webp",
+   "w": 427
+  },
+  "w": 3410
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/11.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/11.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/11.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/12.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/12.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/12.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/13.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/13.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/13.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/14.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/14.display.webp",
+   "w": 1400
+  },
+  "h": 3447,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/14.thumb.webp",
+   "w": 640
+  },
+  "w": 5171
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/15.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/15.display.webp",
+   "w": 933
+  },
+  "h": 5151,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/15.thumb.webp",
+   "w": 427
+  },
+  "w": 3434
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/16.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/16.display.webp",
+   "w": 933
+  },
+  "h": 4828,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/16.thumb.webp",
+   "w": 427
+  },
+  "w": 3219
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/17.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/17.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/17.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/18.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/18.display.webp",
+   "w": 1400
+  },
+  "h": 3431,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/18.thumb.webp",
+   "w": 640
+  },
+  "w": 5147
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/19.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/19.display.webp",
+   "w": 1400
+  },
+  "h": 3290,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/19.thumb.webp",
+   "w": 640
+  },
+  "w": 4935
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/2.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/2.display.webp",
+   "w": 933
+  },
+  "h": 2048,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/2.thumb.webp",
+   "w": 427
+  },
+  "w": 1365
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/20.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/20.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/20.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/21.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/21.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/21.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/22.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/22.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/22.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/23.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/23.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/23.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/24.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/24.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/24.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/25.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/25.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/25.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/26.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/26.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/26.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/27.jpg": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/27.display.webp",
+   "w": 1156
+  },
+  "h": 4187,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/27.thumb.webp",
+   "w": 528
+  },
+  "w": 3456
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/3.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/3.display.webp",
+   "w": 1400
+  },
+  "h": 1365,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/3.thumb.webp",
+   "w": 640
+  },
+  "w": 2048
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/4.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/4.display.webp",
+   "w": 1400
+  },
+  "h": 1365,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/4.thumb.webp",
+   "w": 640
+  },
+  "w": 2048
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/5.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/5.display.webp",
+   "w": 933
+  },
+  "h": 2048,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/5.thumb.webp",
+   "w": 427
+  },
+  "w": 1365
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/6.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/6.display.webp",
+   "w": 933
+  },
+  "h": 2048,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/6.thumb.webp",
+   "w": 427
+  },
+  "w": 1365
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/7.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/7.display.webp",
+   "w": 933
+  },
+  "h": 2048,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/7.thumb.webp",
+   "w": 427
+  },
+  "w": 1365
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/8.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/8.display.webp",
+   "w": 1400
+  },
+  "h": 1365,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/8.thumb.webp",
+   "w": 640
+  },
+  "w": 2048
+ },
+ "medialib/photography/goldenr/APR/cherrydragon/9.jpg": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/9.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/goldenr/APR/cherrydragon/9.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_1965.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_1965.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_1965.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2075.JPG": {
+  "display": {
+   "h": 1089,
+   "path": "medialib/derived/photography/noiseservice/_MG_2075.display.webp",
+   "w": 1400
+  },
+  "h": 3432,
+  "thumb": {
+   "h": 498,
+   "path": "medialib/derived/photography/noiseservice/_MG_2075.thumb.webp",
+   "w": 640
+  },
+  "w": 4412
+ },
+ "medialib/photography/noiseservice/_MG_2101.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/noiseservice/_MG_2101.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/noiseservice/_MG_2101.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/noiseservice/_MG_2221.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2221.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2221.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2223.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2223.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2223.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2227.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2227.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2227.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2261.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2261.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2261.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2264.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2264.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2264.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2271.JPG": {
+  "display": {
+   "h": 1019,
+   "path": "medialib/derived/photography/noiseservice/_MG_2271.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 466,
+   "path": "medialib/derived/photography/noiseservice/_MG_2271.thumb.webp",
+   "w": 640
+  },
+  "w": 4749
+ },
+ "medialib/photography/noiseservice/_MG_2272.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2272.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2272.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2290.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2290.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2290.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2295.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2295.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2295.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2327.JPG": {
+  "display": {
+   "h": 1400,
+   "path": "medialib/derived/photography/noiseservice/_MG_2327.display.webp",
+   "w": 933
+  },
+  "h": 5184,
+  "thumb": {
+   "h": 640,
+   "path": "medialib/derived/photography/noiseservice/_MG_2327.thumb.webp",
+   "w": 427
+  },
+  "w": 3456
+ },
+ "medialib/photography/noiseservice/_MG_2361.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2361.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2361.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2379.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2379.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2379.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2415.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2415.display.webp",
+   "w": 1400
+  },
+  "h": 3456,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2415.thumb.webp",
+   "w": 640
+  },
+  "w": 5184
+ },
+ "medialib/photography/noiseservice/_MG_2487.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2487.display.webp",
+   "w": 1400
+  },
+  "h": 1280,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2487.thumb.webp",
+   "w": 640
+  },
+  "w": 1920
+ },
+ "medialib/photography/noiseservice/_MG_2499.JPG": {
+  "display": {
+   "h": 933,
+   "path": "medialib/derived/photography/noiseservice/_MG_2499.display.webp",
+   "w": 1400
+  },
+  "h": 3322,
+  "thumb": {
+   "h": 427,
+   "path": "medialib/derived/photography/noiseservice/_MG_2499.thumb.webp",
+   "w": 640
+  },
+  "w": 4983
+ }
+}

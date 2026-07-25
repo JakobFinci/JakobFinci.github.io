@@ -1,0 +1,62 @@
+# Site-wide identity and configuration.
+# Everything rendered on the site should trace back to a fact in this repo
+# or a verified public record — do not add biography here that isn't real.
+
+[site]
+title = 'Elias "Eliyahu" Suskind'
+short_name = "E. Suskind"
+url = "https://jakobfinci.github.io"
+description = "Portfolio of Elias \"Eliyahu\" Suskind — engineering, biological research, scientific computing, photography, and pixel art."
+copyright_holder = 'Elias "Eliyahu" Suskind'
+copyright_year = "2026"
+
+[author]
+name = "Elias Suskind"
+alt_name = "Eliyahu Suskind"
+email = "eliassuskind@yahoo.com"
+github = "https://github.com/JakobFinci"
+linkedin = "https://www.linkedin.com/in/eliyahu-suskind-a430a5168/"
+researchgate = "https://www.researchgate.net/profile/Elias-Suskind"
+gra_site = "https://goldenratioalchemy.carrd.co/"
+
+# Positioning statement assembled strictly from documented facts:
+# ECE at Olin, biology at ASU, dual M.S. (CS + microbiology) at Oregon State,
+# published research, photography (Golden Ratio Alchemy), pixel art.
+[identity]
+tagline = "Engineer, researcher, and image-maker."
+positioning = "I work across computer science, the life sciences, and visual media — building software and hardware, studying microbiology, and photographing the Pacific Northwest."
+
+[[nav]]
+label = "Projects"
+url = "/projects/"
+
+[[nav]]
+label = "Research"
+url = "/research/"
+
+[[nav]]
+label = "Creative"
+url = "/media/"
+
+[[nav]]
+label = "About"
+url = "/about/"
+
+# The "currently" strip on the home page. Sourced from the About biography
+# and the author's public ResearchGate profile (grad student, Dept. of
+# Microbiology, Oregon State University).
+[[current]]
+key = "STUDYING"
+value = "Biology — neurobiology & physiology, Arizona State University"
+
+[[current]]
+key = "PURSUING"
+value = "Dual M.S., computer science + microbiology, Oregon State University"
+
+[[current]]
+key = "SHOOTING"
+value = "One half of the photography duo Golden Ratio Alchemy"
+
+[[current]]
+key = "CONSULTING"
+value = "Web + localization freelancing for Goko Energy"

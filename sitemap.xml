@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jakobfinci.github.io/</loc></url>
+  <url><loc>https://jakobfinci.github.io/projects/</loc></url>
+  <url><loc>https://jakobfinci.github.io/projects/washburn/</loc></url>
+  <url><loc>https://jakobfinci.github.io/research/</loc></url>
+  <url><loc>https://jakobfinci.github.io/research/eoe-therapies/</loc></url>
+  <url><loc>https://jakobfinci.github.io/research/puerh-tea/</loc></url>
+  <url><loc>https://jakobfinci.github.io/media/</loc></url>
+  <url><loc>https://jakobfinci.github.io/media/photography/</loc></url>
+  <url><loc>https://jakobfinci.github.io/media/photography/goldenr/</loc></url>
+  <url><loc>https://jakobfinci.github.io/media/photography/noiseservice/</loc></url>
+  <url><loc>https://jakobfinci.github.io/media/pixelart/</loc></url>
+  <url><loc>https://jakobfinci.github.io/about/</loc></url>
 </urlset>

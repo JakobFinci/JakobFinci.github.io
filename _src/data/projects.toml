@@ -1,0 +1,80 @@
+# Project catalog. Rendered on /projects/ and (when featured) the home page.
+#
+# Fields: slug, title, category, status (active | in-development | hidden),
+# year, summary, disciplines, url (internal detail page), external_url,
+# thumb (+ thumb_alt), featured, order.
+#
+# Do not invent outcomes or descriptions. Where information is missing, say
+# so honestly in the rendered copy and mark the gap with a TODO here.
+
+[[project]]
+slug = "washburn"
+title = "Washburn: the Horror Farming Sim"
+category = "Game development"
+status = "in-development"
+summary = "A horror farming simulator in development. A full project dossier — screenshots, design notes, and a build — is still being assembled."
+disciplines = ["Game design", "Creative computing", "Pixel art"]
+url = "/projects/washburn/"
+thumb = "/medialib/thumbnails/washburn_thumb.png"
+thumb_alt = "Pixel art letter W carved from weathered wood, the Washburn emblem"
+featured = true
+order = 1
+# TODO(content): engine/tools, screenshots, release target, and a longer
+# description are not documented anywhere in this repository yet.
+
+[[project]]
+slug = "goko"
+title = "Goko Energy — web & localization consulting"
+category = "Consulting"
+status = "active"
+year = "2024–present"
+summary = "Freelance consulting for Goko Energy, a beverage company making lightly sparkling coconut water with natural caffeine. Started with HTML and website-localization work; now also contributing marketing ideas — including a set of pixel-art fan pieces."
+disciplines = ["Web development", "Localization", "Pixel art"]
+url = "/media/pixelart/"
+link_label = "See the pixel art"
+thumb = "/medialib/pixelart/goko.png"
+thumb_alt = "Pixel art of a red Goko coconut water can"
+featured = false
+order = 2
+
+[[project]]
+slug = "puerh-tea"
+title = "Aging Gracefully — the chemistry of pu'erh tea"
+category = "Research"
+status = "published"
+year = "2024"
+summary = "Undergraduate thesis pairing Folin–Ciocalteu polyphenol assays with blind sommelier tastings to ask whether pu'erh tea's market value tracks anything measurable. Presented at NCUR 2024."
+disciplines = ["Biochemistry", "Data analysis", "Sensory science"]
+url = "/research/puerh-tea/"
+thumb = "/medialib/thumbnails/tea_thumb.png"
+thumb_alt = "Pixel art of a cup of dark tea on a saucer"
+featured = true
+order = 3
+
+[[project]]
+slug = "eoe-review"
+title = "Current and Emerging Therapies for EoE"
+category = "Research"
+status = "published"
+year = "2025"
+summary = "Peer-reviewed comprehensive review of established and emerging therapies for eosinophilic esophagitis, co-authored with clinicians and published in Pharmaceutics."
+disciplines = ["Immunology", "Pharmacology", "Medical literature review"]
+url = "/research/eoe-therapies/"
+thumb = "/medialib/thumbnails/paper_thumb.png"
+thumb_alt = "Pixel art of a corked glass flask holding a green botanical specimen"
+featured = true
+order = 4
+
+# Hidden draft preserved from the previous site (it was commented out there,
+# so it is not rendered here either). TODO(content): confirm the role, dates,
+# and the savings figure before ever publishing this.
+[[project]]
+slug = "convoy"
+title = "Work @ Convoy: $600k annual savings through AI"
+category = "Industry"
+status = "hidden"
+summary = "TODO: unverified draft carried over from a commented-out card on the old site."
+thumb = "/medialib/thumbnails/convoy_thumb.png"
+thumb_alt = "Pixel art letter C badge, the Convoy emblem"
+featured = false
+order = 99
