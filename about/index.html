@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="About Elias &quot;Eliyahu&quot; Suskind — interdisciplinary background across engineering, biology, scientific computing, and visual media, plus contact links.">
   <meta name="twitter:image" content="https://jakobfinci.github.io/assets/og-image.png">
 </head>
-<body class="">
+<body class="page--about">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container site-header__inner">
@@ -29,7 +29,7 @@
       <ul>
         <li><a href="/projects/">Projects</a></li>
         <li><a href="/research/">Research</a></li>
-        <li><a href="/media/">Creative</a></li>
+        <li><a href="/media/">Mixed media</a></li>
         <li><a href="/about/" aria-current="page">About</a></li>
       </ul>
     </nav>
@@ -37,11 +37,19 @@
   </header>
   <main id="main" tabindex="-1">
     <div class="container">
-      <div class="page-head prose">
-        <h1>About</h1>
-      </div>
-      <div class="prose stack">
-<!-- Restored from 05c4124; factual updates confirmed by the author, November 2026. -->
+      <div class="about-layout">
+        <div class="about-sidebar">
+          <h1>About</h1>
+          <nav aria-label="About sections">
+            <a href="#academic">Academic &amp; research direction</a>
+            <a href="#technical">Technical background</a>
+            <a href="#creative">Creative practice</a>
+            <a href="#interests">Personal interests</a>
+            <a href="#username">Why “JakobFinci”?</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="prose stack"><!-- Restored from 05c4124; factual updates confirmed by the author, November 2026. -->
 <p>
           I'm Elias, or Eliyahu, Suskind, and I work across engineering and the life sciences. I'm most at home at the intersection between the two:
           doing biological and biochemical research and writing software and building hardware to facilitate said research. As fellow engineer and role model
@@ -50,7 +58,7 @@
           to do so in a creative out-of-the-box fashion, drawing from throughout my interdisciplinary background while doing so.
         </p>
 
-        <h2>Academic &amp; research direction</h2>
+        <h2 id="academic">Academic &amp; research direction</h2>
         <p>
           My path through school has not been without pivots and bumps in the road. I originally began in a consortium program between Babson and Olin College where I got the chance to build a strong foundation
           in product development, computer engineering, and analytics. I entered the industry as a machine learning engineer just as LLMs began truly disrupting the landscape of tech. While this was
@@ -67,7 +75,7 @@
           My broader interests include the gut-brain axis and translational neuroscience.
         </p>
 
-        <h2>Technical background</h2>
+        <h2 id="technical">Technical background</h2>
         <p> My technical background spans computer science, engineering, and the life sciences, with an emphasis on building computational tools that answer biological and clinical questions. I am equally comfortable writing software, analyzing high-dimensional datasets, designing experiments, and working at the laboratory bench, allowing me to bridge the gap between data generation and data interpretation. </p>
 
         <p> My programming experience includes Python, R, C/C++, SQL, TypeScript, MATLAB, Bash/Linux,  <span class="latex" aria-label="LaTeX">L<span class="latex__a">A</span>T<span class="latex__e">E</span>X</span>, and even the occasional oddball like SystemVerilog and COBOL. I use these languages to develop scientific software, automate analyses, visualize results, and build reproducible research pipelines. My data science work incorporates statistical modeling, machine learning, probabilistic graphical models, Bayesian networks, and modern scientific computing libraries including NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch, and Matplotlib. </p>
@@ -78,7 +86,7 @@
 
         <p> I also have an engineering background in embedded systems, low-voltage electronics, FPGA development, Arduino-based instrumentation, signal processing, and power systems. Whether designing software, analyzing biological datasets, or building custom hardware, I enjoy creating practical tools that connect engineering principles with scientific discovery. </p>
 
-        <h2>Creative practice</h2>
+        <h2 id="creative">Creative practice</h2>
         <p>
           I photograph as one half of the duo
           <a href="https://goldenratioalchemy.carrd.co/" target="_blank" rel="noopener" class="ext">Golden Ratio Alchemy</a>,
@@ -87,7 +95,7 @@
           <a href="/media/">Creative</a>, and the game in <a href="/projects/washburn/">Projects</a>.
         </p>
 
-        <h2>Personal interests</h2>
+        <h2 id="interests">Personal interests</h2>
         <p>
           Away from the desk and lab bench I love geocaching, hiking in the Cascades, tinkering, inventing gadgets, and taking care of my plants, mushrooms, and cats. I consider myself a lifelong
           learner as it's the simplest explanation for a résumé that refuses to pick a single lane.
@@ -99,7 +107,7 @@
 
         <p class="photo-source"><a href="https://static-cdn.toi-media.com/www/uploads/2015/11/Finci2-1024x640.jpg">The real Jakob Finci, circa 2015, getting his swag on.</a> Image source: The Times of Israel.</p>
         </div>
-
+</div>
       </div>
 
       <section id="contact" class="contact-section">

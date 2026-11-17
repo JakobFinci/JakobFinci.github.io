@@ -110,6 +110,22 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(path=path, old=old):
                 self.assertTrue(checks.check_editorial(self.changed(path, old, new)))
 
+    def test_redundant_metadata_heading_is_rejected(self):
+        pages = self.changed('index.html', '</main>', '<p class="eyebrow">Research · 2025</p></main>')
+        self.assertTrue(any('decorative metadata' in e for e in checks.check_editorial(pages)))
+
+    def test_publications_have_one_catalog_and_do_not_reappear_as_projects(self):
+        paper_urls = {p['url'] for p in build.PAPERS}
+        project_urls = {p.get('url') for p in build.PROJECTS}
+        self.assertTrue(paper_urls.isdisjoint(project_urls))
+        paper = build.PAPERS[0]
+        pages = self.changed('projects/index.html', '</main>', f'<a href="{paper["url"]}">Paper</a></main>')
+        self.assertTrue(checks.check_editorial(pages))
+
+    def test_unpublished_photography_categories_stay_unpublished(self):
+        pages = self.changed('media/photography/index.html', '</main>', '<a href="/media/photography/asfilm/">Film</a></main>')
+        self.assertTrue(checks.check_editorial(pages))
+
 
 if __name__ == '__main__':
     unittest.main()

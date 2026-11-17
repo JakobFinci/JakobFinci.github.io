@@ -23,11 +23,13 @@ I'm one half of the photography duo <strong>Golden Ratio Alchemy</strong>, a col
         Our work ranges from conceptual editorial shoots to candid portraits and event coverage, with an emphasis on balance, detail, and natural light.
         We believe in the magic of visual storytelling and strive to create images that feel timeless and intentional. Here are some of my personal favorite photos. You can <a href="https://goldenratioalchemy.carrd.co/" rel="noopener">book a shoot on our site</a>.
 """
-cover = "medialib/photography/goldenr/APR/_MG_2817.jpeg"
+cover = "medialib/photography/goldenr/APR/_MG_2878.jpeg"
+cover_caption = "Ivar's, Seattle, at night II. Credit: Eliyahu Suskind"
 order = 1
 
 [[collection.section]]
 title = "April 2025 — Seattle waterfront"
+id = "waterfront"
 [[collection.section.image]]
 src = "medialib/photography/goldenr/APR/_MG_2817.jpeg"
 caption = "PNW-themed mural, Seattle. Credit: Annabelle Foster"
@@ -43,6 +45,7 @@ caption = "Ivar's, Seattle, at night II. Credit: Eliyahu Suskind"
 
 [[collection.section]]
 title = "Cherry Dragon"
+id = "cherry-dragon"
 folder = "medialib/photography/goldenr/APR/cherrydragon"
 caption_prefix = "Cherry Dragon series"
 credit = "Credit: Eliyahu Suskind"
@@ -59,6 +62,7 @@ intro = """
 A raw and emotive set from the night <strong>Noise Service</strong> released their debut album. Founded in Seattle in 2021, the band folds shoegaze, retro rock, and Latin influence into what they call kaleidoscopic fusion rock. The current line-up includes Andy Mowdy, Corey Ray Zimmerman, Katharine McAllister, and Rolando Sotomayor Pino. Hear the <a href="https://open.spotify.com/album/3vrXWsLLmtIh1r6jzfSq7t" rel="noopener">debut album</a>.<br><br> All images are the intellectual property of Elias "Eliyahu" Suskind and Annabelle Colleen Foster, licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener">CC BY-ND 4.0</a>.
 """
 cover = "medialib/photography/noiseservice/_MG_2361.JPG"
+cover_caption = "Noise Service album release. Credit: Elias Suskind & Annabelle Foster · CC BY-ND 4.0"
 order = 2
 
 [[collection.section]]

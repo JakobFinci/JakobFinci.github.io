@@ -64,6 +64,18 @@ project listing stay withdrawn. Hidden project records and all media remain in
 the repository. `check_editorial()` names these decisions and their commits;
 change those assertions deliberately if the author revises them again.
 
+Projects and publications have separate catalogs and pages. Research articles
+and undergraduate research are grouped in `research.toml`; project records do
+not duplicate those publications. Mixed Media leads to Photography and Pixel Art,
+and the photography index contains only collections with actual photographs.
+The 2025 film/digital placeholders remain documented in the source, without
+empty public categories or promises of new material. Local section navigation
+connects the collections and the longer About page.
+
+The research introduction and first-person tea summary recover wording from
+`70a5be4`, with minor grammar corrections. Informative citations, credits and
+status descriptions remain; the redundant decorative metadata headings do not.
+
 ### Regenerating media (only when images change)
 
 These use [Pillow](https://python-pillow.org/) and are content-tooling, not part
