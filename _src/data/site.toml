@@ -32,9 +32,13 @@ label = "Research"
 url = "/research/"
 
 [[nav]]
-label = "Creative"
+label = "Mixed media"
 url = "/media/"
 
 [[nav]]
 label = "About"
 url = "/about/"
+
+[media_photo]
+src = "medialib/photography/goldenr/APR/cherrydragon/8.JPG"
+caption = "Cherry Dragon series — frame 9. Credit: Eliyahu Suskind"

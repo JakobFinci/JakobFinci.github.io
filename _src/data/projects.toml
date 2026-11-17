@@ -1,4 +1,4 @@
-# Project catalog. Rendered on /projects/ and (when featured) the home page.
+# Project catalog. Scientific work lives in research.toml, not this catalog.
 #
 # Fields: slug, title, category, status (active | in-development | published | hidden),
 # year, summary, disciplines, url (internal detail page), external_url,
@@ -38,34 +38,6 @@ thumb = "/medialib/pixelart/goko.png"
 thumb_alt = "Pixel art of a red Goko coconut water can"
 featured = false
 order = 2
-
-[[project]]
-slug = "puerh-tea"
-title = "Aging Gracefully — the chemistry of pu'erh tea"
-category = "Research"
-status = "published"
-year = "2024"
-summary = "Undergraduate thesis pairing Folin–Ciocalteu polyphenol assays with blind sommelier tastings to ask whether pu'erh tea's market value tracks anything measurable. Presented at NCUR 2024."
-disciplines = ["Biochemistry", "Data analysis", "Sensory science"]
-url = "/research/puerh-tea/"
-thumb = "/medialib/thumbnails/tea_thumb.png"
-thumb_alt = "Pixel art of a cup of dark tea on a saucer"
-featured = true
-order = 3
-
-[[project]]
-slug = "eoe-review"
-title = "Current and Emerging Therapies for EoE"
-category = "Research"
-status = "published"
-year = "2025"
-summary = "Peer-reviewed comprehensive review of established and emerging therapies for eosinophilic esophagitis, co-authored with clinicians and published in Pharmaceutics."
-disciplines = ["Immunology", "Pharmacology", "Medical literature review"]
-url = "/research/eoe-therapies/"
-thumb = "/medialib/thumbnails/paper_thumb.png"
-thumb_alt = "Pixel art of a corked glass flask holding a green botanical specimen"
-featured = true
-order = 4
 
 # Hidden draft preserved from the previous site (it was commented out there,
 # so it is not rendered here either). TODO(content): confirm the role, dates,

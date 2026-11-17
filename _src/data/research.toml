@@ -5,6 +5,12 @@
 
 [[paper]]
 slug = "eoe-therapies"
+group = "Published articles"
+short_title = "Current and Emerging Therapies for EoE"
+summary = "Peer-reviewed comprehensive review of established and emerging therapies for eosinophilic esophagitis, co-authored with clinicians and published in Pharmaceutics."
+thumb = "/medialib/thumbnails/paper_thumb.png"
+thumb_alt = "Pixel art of a corked glass flask holding a green botanical specimen"
+disciplines = ["Immunology", "Pharmacology", "Medical literature review"]
 url = "/research/eoe-therapies/"
 title = "Current and Emerging Therapies for Eosinophilic Esophagitis (EoE): A Comprehensive Review"
 kind = "Peer-reviewed review"
@@ -25,7 +31,6 @@ external_url = "https://doi.org/10.3390/pharmaceutics17060753"
 external_label = "Read the paper (open access)"
 pmc_url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12196940/"
 verified_source = "PubMed Central PMC12196940; DOI 10.3390/pharmaceutics17060753"
-related_project = "eoe-review"
 figure = "/medialib/EoE/index.jpg"
 figure_alt = "Diagram of biologic agent target sites of action along the type-2 inflammatory pathway in eosinophilic esophagitis"
 order = 1
@@ -33,6 +38,12 @@ lead = "A comprehensive review of established and emerging treatments for eosino
 
 [[paper]]
 slug = "puerh-tea"
+group = "Undergraduate research"
+short_title = "Aging Gracefully — the chemistry of pu'erh tea"
+summary = "Undergraduate thesis pairing Folin–Ciocalteu polyphenol assays with blind sommelier tastings to ask whether pu'erh tea's market value tracks anything measurable. Presented at NCUR 2024."
+thumb = "/medialib/thumbnails/tea_thumb.png"
+thumb_alt = "Pixel art of a cup of dark tea on a saucer"
+disciplines = ["Biochemistry", "Data analysis", "Sensory science"]
 url = "/research/puerh-tea/"
 title = "Aging Gracefully: Exploring the Impact of Aging on the Quantitative and Qualitative Characteristics of Pu'erh Tea"
 kind = "Undergraduate thesis · NCUR 2024"
@@ -44,8 +55,8 @@ month = "April"
 external_url = "https://www.researchgate.net/publication/384114759_Aging_Gracefully_Exploring_the_Impact_of_Aging_on_the_Quantitative_and_Qualitative_Characteristics_of_Pu'erh_Tea"
 external_label = "Read the study on ResearchGate"
 verified_source = "ResearchGate publication 384114759"
-related_project = "puerh-tea"
 figure = "/medialib/tea/flowchart.png"
 figure_alt = "Flowchart of the study's data-analysis pipeline, from CSV ingestion through statistical correlation"
 order = 2
-lead = "An undergraduate thesis correlating the chemistry of post-fermented pu'erh tea with blind sensory evaluations, aiming at objective, science-backed quality standards for a booming but loosely regulated market."
+# First-person summary restored from 70a5be4; grammar and punctuation corrected.
+lead = "My undergraduate thesis: a qualitative and quantitative exploration of the biochemistry of Chinese post-fermented tea (pu'erh). Featured at the 2024 National Conference for Undergraduate Research and published by Babson College."

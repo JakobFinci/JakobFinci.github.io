@@ -216,7 +216,8 @@ def check_editorial(pages: dict[str, str]) -> list[str]:
     }
     forbidden = {
         "index.html": ['id="now-h"', 'id="creative-h"', 'class="currently"'],
-        "projects/index.html": ["Goko Energy"],
+        "projects/index.html": ["Goko Energy", "Work @ Convoy"] + [f'href="{p["url"]}"' for p in build.PAPERS],
+        "media/photography/index.html": ["/asfilm/", "/asdigital/", "In preparation"],
         "projects/washburn/index.html": ["Dossier in progress", "will be published"],
     }
     errors = []
@@ -230,6 +231,8 @@ def check_editorial(pages: dict[str, str]) -> list[str]:
             if phrase in pages.get(rel, ""):
                 errors.append(f"[preservation] {rel}: reintroduced withdrawn content: {phrase}")
     for rel, content in pages.items():
+        if re.search(r'class="[^"]*\beyebrow\b', content):
+            errors.append(f"[preservation] {rel}: reintroduced decorative metadata heading")
         for phrase in ("A full project dossier", "Dossier in progress.", "image-maker"):
             if phrase in content:
                 errors.append(f"[preservation] {rel}: reintroduced withdrawn wording: {phrase}")
