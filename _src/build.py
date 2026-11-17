@@ -97,13 +97,12 @@ def plain_img(rel: str, alt: str, *, cls: str = "", loading: str = "lazy",
     return f'<img{c} src="/{e(rel)}" alt="{e(alt)}"{dim}{load}>'
 
 
-def photo_img(rel: str, alt: str, *, sizes: str = "(max-width: 40rem) 90vw, 60vw",
-              priority: bool = False) -> str:
+def photo_img(rel: str, alt: str) -> str:
     thumb, w, h = photo_variant(rel, "thumb")
     display, dw, _ = photo_variant(rel, "display")
-    load = 'loading="eager" fetchpriority="high"' if priority else 'loading="lazy"'
     return (f'<img src="{e(thumb)}" srcset="{e(thumb)} {w}w, {e(display)} {dw}w" '
-            f'sizes="{e(sizes)}" alt="{e(alt)}" width="{w}" height="{h}" {load} decoding="async">')
+            f'sizes="(max-width: 40rem) 90vw, 60vw" alt="{e(alt)}" width="{w}" height="{h}" '
+            'loading="lazy" decoding="async">')
 
 
 # --------------------------------------------------------------------------
@@ -154,7 +153,7 @@ def footer_html() -> str:
 
 
 def shell(*, title: str, description: str, path: str, main_html: str,
-          active: str = "", extra_head: str = "", jsonld: dict | list | None = None,
+          active: str = "", jsonld: dict | list | None = None,
           og_type: str = "website", body_class: str = "") -> str:
     url = canonical(path)
     ld = ""
@@ -181,7 +180,7 @@ def shell(*, title: str, description: str, path: str, main_html: str,
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{e(title)}">
   <meta name="twitter:description" content="{e(description)}">
-  <meta name="twitter:image" content="{e(canonical(OG_IMAGE))}">{extra_head}{ld}
+  <meta name="twitter:image" content="{e(canonical(OG_IMAGE))}">{ld}
 </head>
 <body class="{e(body_class)}">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -199,12 +198,12 @@ def shell(*, title: str, description: str, path: str, main_html: str,
 # Reusable components
 # --------------------------------------------------------------------------
 
-def project_entry(p: dict, heading: str = "h3") -> str:
+def project_entry(p: dict) -> str:
     media = plain_img(p["thumb"].lstrip("/"), p["thumb_alt"]) if p.get("thumb") else ""
     return f"""      <article class="project-feature">
         <div class="project-feature__image">{media}</div>
         <div>
-          <{heading}><a href="{e(p['url'])}">{e(p['title'])}</a></{heading}>
+          <h3><a href="{e(p['url'])}">{e(p['title'])}</a></h3>
           <p>{e(p['summary'])}</p>
         </div>
       </article>"""
@@ -304,16 +303,14 @@ def citation_text(p: dict) -> str:
 
 def page_home() -> str:
     # Retain the withdrawn Currently/Creative card sections as withdrawn.
-    # The new photograph is a direct view into an existing body of work.
+    # The original pixel portrait remains the homepage's visual centerpiece.
     washburn = next(p for p in PROJECTS if p["slug"] == "washburn")
-    photograph = SITE["home_photo"]
     papers = "\n".join(publication_entry(p, brief=True) for p in sorted(PAPERS, key=lambda p: p["order"]))
     main = f"""    <div class="container">
       <section class="home-intro" aria-labelledby="home-title">
         <div class="home-intro__text">
           <div class="home-name">
-            <h1 id="home-title">Elias <span>“Eliyahu”</span> Suskind</h1>
-            {plain_img('medialib/me.png', 'Pixel-art portrait of Elias Suskind, arms crossed', priority=True)}
+            <h1 id="home-title">Elias <span>“Eliyahu”</span><br> Suskind</h1>
           </div>
           <p class="home-tagline">{e(SITE['identity']['tagline'])}</p>
           <p class="hero__intro">{e(SITE['identity']['positioning'])}</p>
@@ -322,11 +319,8 @@ def page_home() -> str:
             <a href="/about/#contact">Get in touch</a>
           </div>
         </div>
-        <figure class="home-photograph">
-          <a href="{e(photograph['url'])}" aria-label="View Golden Ratio Alchemy photographs">
-            {photo_img(photograph['src'], photograph['caption'], sizes="(max-width: 60rem) 90vw, 50vw", priority=True)}
-          </a>
-          <figcaption>{e(photograph['caption'])}</figcaption>
+        <figure class="home-portrait">
+          {plain_img('medialib/me.png', 'Pixel-art portrait of Elias Suskind, arms crossed', priority=True)}
         </figure>
       </section>
       <div class="home-work" id="work-h">

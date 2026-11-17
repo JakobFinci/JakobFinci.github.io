@@ -68,7 +68,6 @@ main { flex: 1; padding-block: clamp(2.5rem, 6vw, 5rem); }
 
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; padding-bottom: 1rem; border-bottom: 2px solid var(--text); }
 .section-head h2 { font-size: 1.5rem; }
-.section-head a { font-size: .9rem; padding-block: .3rem; }
 
 .page-head { margin-bottom: 2.5rem; }
 .page-head h1 { margin-top: .5rem; max-width: 25ch; }
@@ -133,22 +132,19 @@ th { background: var(--surface); font-weight: 600; }
 h1, h2, h3 { overflow-wrap: break-word; }
 figcaption { color: var(--muted); font-size: .85rem; line-height: 1.5; margin-top: .8rem; }
 
-/* The name, pixel portrait and photograph form one introduction. */
+/* The original portrait is the only featured image on the homepage. */
 .page--home main { padding-top: 3.25rem; }
-.home-intro { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: center; padding-bottom: 4rem; }
-.home-name { display: grid; grid-template-columns: minmax(0, 1fr) 86px; gap: 1.4rem; align-items: end; }
-.home-name h1 { font-size: clamp(3.5rem, 5.1vw, 4.8rem); line-height: 1.02; }
-.home-name h1 span { display: block; font-style: italic; }
-.home-name img { width: 86px; image-rendering: pixelated; margin-bottom: .3rem; }
+.home-intro { display: grid; grid-template-columns: minmax(0, 1fr) 342px; gap: 5rem; align-items: center; padding-bottom: 3.5rem; }
+.home-name h1 { font-size: clamp(3.5rem, 6vw, 5.6rem); line-height: 1.05; }
+.home-name h1 span { font-style: italic; white-space: nowrap; }
+.home-portrait { justify-self: end; }
+.home-portrait img { width: 342px; image-rendering: pixelated; }
 .home-tagline { font: 1.35rem/1.4 var(--serif); margin-block: 1.8rem .9rem; }
 .hero__intro { max-width: 43ch; color: var(--muted); }
 .hero__links { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin-top: 1.2rem; }
 .hero__links a { padding-block: .5rem; }
-.home-photograph { align-self: center; }
-.home-photograph img { width: 100%; }
-.home-photograph figcaption { max-width: 45ch; }
-.home-work { display: grid; grid-template-columns: 1.35fr 1fr; border-top: 3px solid var(--text); padding-top: 2.2rem; gap: 4rem; }
-.home-work h2 { font-size: 2rem; margin-bottom: 2rem; }
+.home-work { display: grid; grid-template-columns: 1.35fr 1fr; border-top: 2px solid var(--text); padding-top: 2rem; gap: 3rem; }
+.home-work h2 { font-size: 2rem; margin-bottom: 1.6rem; }
 .home-work h2 a { color: var(--text); text-decoration: none; }
 .home-work h2 a:hover { text-decoration: underline; }
 .home-projects { border-left: 1px solid var(--line); padding-left: 2.5rem; }
@@ -245,10 +241,9 @@ figcaption { color: var(--muted); font-size: .85rem; line-height: 1.5; margin-to
 .page--about .contact-section { margin-left: 19rem; }
 
 @media (max-width: 60rem) {
-  .home-intro { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .home-name { grid-template-columns: minmax(0, 1fr) 64px; gap: .75rem; }
-  .home-name h1 { font-size: clamp(2.4rem, 5vw, 3.2rem); }
-  .home-name img { width: 64px; }
+  .home-intro { grid-template-columns: minmax(0, 1fr) 171px; gap: 2.5rem; }
+  .home-name h1 { font-size: clamp(3rem, 5.8vw, 4.5rem); }
+  .home-portrait img { width: 171px; }
   .home-work { gap: 2rem; }
   .home-projects { padding-left: 2rem; }
   .game-intro { grid-template-columns: 128px minmax(0, 1fr); gap: 2rem; padding: 2.5rem; }
@@ -268,10 +263,15 @@ figcaption { color: var(--muted); font-size: .85rem; line-height: 1.5; margin-to
   .site-nav ul { justify-content: space-between; gap: .35rem; }
   .site-nav a { font-size: .9rem; }
   .brand { font-size: 1.3rem; }
-  .home-intro { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 2.5rem; }
-  .home-name { grid-template-columns: minmax(0, 1fr) 86px; }
-  .home-name h1 { font-size: clamp(2.8rem, 11vw, 4rem); }
-  .home-name img { width: 86px; }
+  .home-intro { grid-template-columns: minmax(0, 1fr) 128px; gap: 0 1rem; padding-bottom: 2.5rem; }
+  .home-intro__text { display: contents; }
+  .home-name { grid-column: 1; grid-row: 1; }
+  .home-name h1 { font-size: clamp(2.35rem, 9vw, 3rem); }
+  .home-name h1 span { display: block; }
+  .home-name h1 br { display: none; }
+  .home-portrait { grid-column: 2; grid-row: 1; }
+  .home-portrait img { width: 128px; }
+  .home-tagline, .hero__intro, .hero__links { grid-column: 1 / -1; }
   .home-tagline { margin-top: 1.4rem; font-size: 1.3rem; }
   .home-work { grid-template-columns: 1fr; gap: 2.5rem; }
   .home-projects { border-left: 0; border-top: 1px solid var(--line); padding: 2rem 0 0; }
@@ -306,8 +306,7 @@ figcaption { color: var(--muted); font-size: .85rem; line-height: 1.5; margin-to
   .contact-list a { grid-template-columns: 1fr; gap: .2rem; }
 }
 @media (max-width: 24rem) {
-  .home-name { grid-template-columns: minmax(0, 1fr) 64px; }
-  .home-name h1 { font-size: 2.4rem; }
-  .home-name h1 span { white-space: nowrap; }
-  .home-name img { width: 64px; }
+  .home-intro { grid-template-columns: minmax(0, 1fr) 86px; }
+  .home-name h1 { font-size: 2.2rem; }
+  .home-portrait img { width: 86px; }
 }
