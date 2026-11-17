@@ -64,7 +64,7 @@ def main() -> None:
                     }
             manifest[rel.as_posix()] = entry
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
-    MANIFEST.write_text(json.dumps(manifest, indent=1, sort_keys=True) + "\n")
+    MANIFEST.write_text(json.dumps(manifest, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     print(f"{len(manifest)} photos indexed, {count} derivatives written")
 
 

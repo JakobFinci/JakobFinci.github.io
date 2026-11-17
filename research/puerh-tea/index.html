@@ -39,22 +39,22 @@
 }
 </script>
 </head>
-<body>
+<body class="page--paper">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Elias &quot;Eliyahu&quot; Suskind <span class="reg" aria-hidden="true">/ES</span></a>
+      <a class="brand" href="/">Elias &quot;Eliyahu&quot; Suskind</a>
     <nav class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="/projects/">Projects</a></li>
-        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/research/" aria-current="true">Research</a></li>
         <li><a href="/media/">Creative</a></li>
         <li><a href="/about/">About</a></li>
       </ul>
     </nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <div class="container">
       <div class="page-head prose">
         <p class="eyebrow">Undergraduate thesis · NCUR 2024</p>
@@ -81,11 +81,11 @@
         <h2>Background &amp; context</h2>
         <p>Pu'erh differs from other teas because of its fermentation and aging, which lead to evolving flavors. Yet scientific analysis of pu'erh's chemical and sensory changes over time remains rare. This study controls for terroir, cultivar, and fermentation method, blending lab assays with trained-sommelier evaluations to fill a gap in the field.</p>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Table 1 — How this study differs from prior work">
           <table>
             <caption>Table 1 — How this study differs from prior work</caption>
             <thead>
-              <tr><th>Aspect</th><th>Basic tea chemistry studies</th><th>General sensory studies</th><th>This study</th></tr>
+              <tr><th scope="col">Aspect</th><th scope="col">Basic tea chemistry studies</th><th scope="col">General sensory studies</th><th scope="col">This study</th></tr>
             </thead>
             <tbody>
               <tr><td>Tea type focus</td><td>Mostly green, black, oolong</td><td>Mixed varieties, rarely pu'erh</td><td>Exclusive focus on shou and sheng pu'erh across aging windows</td></tr>
@@ -141,14 +141,14 @@
           <li>Specific flavor descriptors correlated with perceived quality</li>
         </ul>
         <div class="gallery">
-          <figure><a href="/medialib/tea/matrix1.png" target="_blank" rel="noopener"><img src="/medialib/tea/matrix1.png" alt="Correlation matrix relating flavor descriptors to perceived quality, part 1" width="683" height="607" loading="lazy" decoding="async" style="height:auto"></a><figcaption><span class="n">FIG. 3</span><span>Flavor–quality correlation matrix (I)</span></figcaption></figure>
-          <figure><a href="/medialib/tea/matrix2.png" target="_blank" rel="noopener"><img src="/medialib/tea/matrix2.png" alt="Correlation matrix relating flavor descriptors to perceived quality, part 2" width="738" height="683" loading="lazy" decoding="async" style="height:auto"></a><figcaption><span class="n">FIG. 4</span><span>Flavor–quality correlation matrix (II)</span></figcaption></figure>
+          <figure><a href="/medialib/tea/matrix1.png" target="_blank" rel="noopener"><img src="/medialib/tea/matrix1.png" alt="Correlation matrix relating flavor descriptors to perceived quality, part 1" width="683" height="607" loading="lazy" decoding="async"></a><figcaption><span class="n">FIG. 3</span><span>Flavor–quality correlation matrix (I)</span></figcaption></figure>
+          <figure><a href="/medialib/tea/matrix2.png" target="_blank" rel="noopener"><img src="/medialib/tea/matrix2.png" alt="Correlation matrix relating flavor descriptors to perceived quality, part 2" width="738" height="683" loading="lazy" decoding="async"></a><figcaption><span class="n">FIG. 4</span><span>Flavor–quality correlation matrix (II)</span></figcaption></figure>
         </div>
 
         <h2>Future work</h2>
         <p>Future research should explore longer aging periods to pin down when significant chemical and sensory changes occur. Deeper study of fermentation conditions — temperature and humidity during wodui — could optimize shou pu'erh quality. Expanding the participant pool and extending timelines will help refine the relationship between pu'erh chemotype and market valuation.</p>
 
-        <p style="margin-top:var(--space-l)"><a class="btn" href="/research/">← All research</a></p>
+        <p class="back-link"><a class="btn" href="/research/">← All research</a></p>
       </div>
     </div>
   </main>

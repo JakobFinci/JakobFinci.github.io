@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Not Found</title>
+  <meta name="description" content="404 - Page Not Found. Heads Up: This is not my IP, I am not Rick Astley.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://jakobfinci.github.io/404.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <meta property="og:title" content="404 - Not Found">
+  <meta property="og:description" content="Heads Up: This is not my IP, I am not Rick Astley.">
+  <meta property="og:url" content="https://jakobfinci.github.io/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jakobfinci.github.io/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="page--404">
+  <main id="main" tabindex="-1">
+    <video class="rickroll" autoplay loop playsinline preload="metadata" controls aria-label="Rick Astley music video">
+      <source src="/medialib/404.mp4" type="video/mp4">
+      Your browser does not support the video tag. <a href="/medialib/404.mp4">Play the video.</a>
+    </video>
+    <div class="error-message">
+      <h1>404 - Page Not Found.</h1>
+      <p>Heads Up: This is not my IP, I am not Rick Astley.</p>
+    </div>
+    <a class="error-home" href="/">Back home</a>
+  </main>
+  <script>
+    const video = document.querySelector('video');
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    function respectMotion() {
+      if (motion.matches) { video.removeAttribute('autoplay'); video.pause(); }
+    }
+    respectMotion();
+    motion.addEventListener('change', respectMotion);
+  </script>
+</body>
+</html>

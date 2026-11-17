@@ -25,7 +25,7 @@ def main() -> None:
         if p.suffix.lower() in EXTS and p.is_file():
             with Image.open(p) as im:
                 dims[p.relative_to(ROOT).as_posix()] = [im.width, im.height]
-    OUT.write_text(json.dumps(dims, indent=0, sort_keys=True) + "\n")
+    OUT.write_text(json.dumps(dims, indent=0, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     print(f"{len(dims)} images measured")
 
 

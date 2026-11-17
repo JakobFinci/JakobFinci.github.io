@@ -25,3 +25,5 @@ jobs:
         run: python _src/build.py --check
       - name: Run link & metadata checks
         run: python _src/checks.py
+      - name: Test validation and preservation regressions
+        run: python -m unittest discover -s _src -p "test_*.py"

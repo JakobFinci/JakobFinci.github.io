@@ -1,6 +1,6 @@
 # Project catalog. Rendered on /projects/ and (when featured) the home page.
 #
-# Fields: slug, title, category, status (active | in-development | hidden),
+# Fields: slug, title, category, status (active | in-development | published | hidden),
 # year, summary, disciplines, url (internal detail page), external_url,
 # thumb (+ thumb_alt), featured, order.
 #
@@ -12,7 +12,7 @@ slug = "washburn"
 title = "Washburn: the Horror Farming Sim"
 category = "Game development"
 status = "in-development"
-summary = "A horror farming simulator in development. A full project dossier — screenshots, design notes, and a build — is still being assembled."
+summary = "A horror farming simulator in development."
 disciplines = ["Game design", "Creative computing", "Pixel art"]
 url = "/projects/washburn/"
 thumb = "/medialib/thumbnails/washburn_thumb.png"
@@ -26,8 +26,10 @@ order = 1
 slug = "goko"
 title = "Goko Energy — web & localization consulting"
 category = "Consulting"
-status = "active"
-year = "2024–present"
+# Removed from the public project index by the author in 87b5890.
+# Keep the record; the artwork and corrected consulting account live in Pixel Art.
+status = "hidden"
+year = "2024"
 summary = "Freelance consulting for Goko Energy, a beverage company making lightly sparkling coconut water with natural caffeine. Started with HTML and website-localization work; now also contributing marketing ideas — including a set of pixel-art fan pieces."
 disciplines = ["Web development", "Localization", "Pixel art"]
 url = "/media/pixelart/"
