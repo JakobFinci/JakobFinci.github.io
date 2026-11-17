@@ -16,24 +16,27 @@ server-side build step that can drift or break.
 ```
 _src/
   build.py            # renders data + templates -> HTML at canonical paths
-  checks.py           # link / metadata / drift verification (stdlib only)
+  checks.py           # committed HTML, links, anchors, media, drift, preservation
+  test_checks.py      # mutation tests for the validator and editorial regressions
   data/*.toml         # content model: site, projects, research, collections
   data/images.json    # photography derivative manifest (generated)
   data/dims.json      # every image's pixel dimensions (generated)
-  content/            # long-form article + about bodies (HTML partials)
+  content/            # article + about partials; standalone 404 document
   tools/              # content tooling (needs Pillow): derivatives, dims, OG image
 assets/
-  css/site.css        # the entire design system (tokens + components)
+  css/site.css        # shared typography, layouts, and light/dark palettes
   favicon.svg  og-image.png
 medialib/             # original media + medialib/derived/ WebP derivatives
 index.html, projects/, research/, media/, about/, 404.html   # generated output
 sitemap.xml robots.txt .nojekyll                              # generated / config
 ```
 
-Content lives in `_src/data/*.toml` and `_src/content/`. The design system lives
-entirely in `assets/css/site.css` as documented custom properties (colors, type
-scale, spacing, motion, breakpoints). There is **no runtime JavaScript** and **no
-web fonts** — light/dark themes come from `prefers-color-scheme`.
+Content lives in `_src/data/*.toml` and `_src/content/`. Layouts and both palettes
+live in `assets/css/site.css`. There are no web fonts or JavaScript dependencies.
+Navigation, galleries, and legacy redirects work without JavaScript. The 404 has
+one small inline script to stop autoplay when reduced motion is requested; its
+native video controls remain available. Browsers may block audible autoplay.
+Light/dark palettes follow `prefers-color-scheme`.
 
 ## Local development
 
@@ -42,10 +45,24 @@ Requires Python 3.11+ (for `tomllib`). No packages needed to build or serve.
 ```bash
 python _src/build.py          # regenerate all HTML, sitemap, robots
 python _src/checks.py         # verify links, metadata, and build freshness
+python _src/build.py --check  # read-only comparison with committed output
+python -m unittest discover -s _src -p "test_*.py"
 python -m http.server 8000    # preview at http://localhost:8000/
 ```
 
 Edit content in `_src/`, run `build.py`, and commit the regenerated files.
+The checks inspect the actual committed HTML, including relative links,
+same-site absolute URLs, fragment targets, image dimensions, and filename case.
+They also reject public HTML without a generator source. A normal build writes
+its outputs; it does not attempt to merge manual HTML edits. Use `--check` to
+detect drift before rebuilding an unfamiliar checkout.
+
+The July/August 2026 corrections are now in the source: the About biography,
+gallery introductions, Goko fan-art account, short Washburn description, and
+Rick Astley 404. The withdrawn Currently and Creative homepage sections and Goko
+project listing stay withdrawn. Hidden project records and all media remain in
+the repository. `check_editorial()` names these decisions and their commits;
+change those assertions deliberately if the author revises them again.
 
 ### Regenerating media (only when images change)
 
@@ -61,10 +78,12 @@ python _src/tools/og_image.py      # rebuild assets/og-image.png
 
 ## Deployment
 
-GitHub Pages serves the `main` branch root. To publish: run `python
-_src/build.py`, commit the changed HTML, and push to `main`. The
+GitHub Pages serves the `main` branch root. Prepare changes on a feature branch,
+build, validate, and include the generated files in the pull request. Publication
+happens when reviewed changes reach `main`. The
 `.github/workflows/build-and-check.yml` action re-runs the build in `--check`
-mode and the link/metadata checks on every push and pull request; if the
-committed output is stale or a link breaks, the check fails.
+mode and the link/metadata checks on pushes to `main` and pull requests targeting
+`main`; if the committed output is stale or validation fails, the check fails. CI checks drift
+before any generation, so it cannot hide an out-of-date committed page.
 
 No custom domain, no build plugins — just static files behind `.nojekyll`.

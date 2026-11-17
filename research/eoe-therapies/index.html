@@ -64,22 +64,22 @@
 }
 </script>
 </head>
-<body>
+<body class="page--paper">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Elias &quot;Eliyahu&quot; Suskind <span class="reg" aria-hidden="true">/ES</span></a>
+      <a class="brand" href="/">Elias &quot;Eliyahu&quot; Suskind</a>
     <nav class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="/projects/">Projects</a></li>
-        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/research/" aria-current="true">Research</a></li>
         <li><a href="/media/">Creative</a></li>
         <li><a href="/about/">About</a></li>
       </ul>
     </nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <div class="container">
       <div class="page-head prose">
         <p class="eyebrow">Peer-reviewed review</p>
@@ -106,15 +106,15 @@
         <h2>Background &amp; context</h2>
         <p>EoE results from a genetic predisposition and environmental triggers driving a dysfunctional Th2 immune response. Guidelines recommend PPIs, topical steroids, and dietary elimination as first-line treatments. Newer biologic therapies targeting the IL-4/IL-13, IL-5, IgE, and TNFα pathways are reshaping the treatment paradigm.</p>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Table 1 — Therapy categories compared">
           <table>
             <caption>Table 1 — Therapy categories compared</caption>
             <thead>
-              <tr><th>Therapy category</th><th>Mechanism</th><th>Histologic remission</th><th>FDA status for EoE</th><th>Key limitations</th></tr>
+              <tr><th scope="col">Therapy category</th><th scope="col">Mechanism</th><th scope="col">Histologic remission</th><th scope="col">FDA status for EoE</th><th scope="col">Key limitations</th></tr>
             </thead>
             <tbody>
               <tr><td>Proton pump inhibitors (PPIs)</td><td>Acid suppression; anti-inflammatory effects on esophageal epithelium</td><td>~42–50%</td><td>Off-label (standard of care)</td><td>Long-term safety concerns; reduced efficacy in fibrostenotic phenotype</td></tr>
-              <tr><td>Topical steroids (budesonide/fluticasone)</td><td>Local anti-inflammatory; suppression of eosinophilic infiltration</td><td>~50–71%</td><td>Off-label (standard of care)</td><td>Esophageal candidiasis (5–30%); relapse after withdrawal</td></tr>
+              <tr><td>Topical steroids (budesonide/fluticasone)</td><td>Local anti-inflammatory; suppression of eosinophilic infiltration</td><td>~50–71%</td><td>Budesonide oral suspension (Eohilia): approved in 2024 for 12 weeks of treatment in ages 11 and older (<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/213976s000lbl.pdf">FDA label</a>). Approval is formulation-specific.</td><td>Esophageal candidiasis (5–30%); relapse after withdrawal</td></tr>
               <tr><td>Dietary elimination</td><td>Removal of food allergen triggers (milk, wheat, egg, soy, nuts, seafood)</td><td>Up to 74% (six-food elimination)</td><td>N/A (non-pharmacologic)</td><td>Low compliance; requires repeated endoscopies</td></tr>
               <tr><td>Dupilumab (anti-IL-4/IL-13)</td><td>Blocks IL-4Rα subunit; inhibits IL-4 and IL-13 signaling</td><td>~59–68%</td><td>FDA approved (2022; expanded 2024)</td><td>Injection-site reactions; insurance access barriers</td></tr>
               <tr><td>Anti-IL-5 agents (mepolizumab, reslizumab, benralizumab)</td><td>Targets IL-5 to reduce eosinophil proliferation and survival</td><td>Significant eosinophil reduction, but limited symptom improvement</td><td>Investigational</td><td>Disconnect between histologic and symptomatic response</td></tr>
@@ -156,11 +156,11 @@
           <li>Etrasimod: 46% eosinophil reduction at higher doses</li>
         </ul>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Table 2 — Pharmacokinetics of biologic agents">
           <table>
             <caption>Table 2 — Pharmacokinetics of biologic agents</caption>
             <thead>
-              <tr><th>Agent</th><th>Mechanism</th><th>Half-life</th><th>Bioavailability</th><th>Time to clinical response</th></tr>
+              <tr><th scope="col">Agent</th><th scope="col">Mechanism</th><th scope="col">Half-life</th><th scope="col">Bioavailability</th><th scope="col">Time to clinical response</th></tr>
             </thead>
             <tbody>
               <tr><td>Dupilumab</td><td>Anti-IL-4/IL-13</td><td>Target-mediated (nonlinear)</td><td>61–64%</td><td>2–4 weeks</td></tr>
@@ -175,7 +175,7 @@
         <h2>Future work</h2>
         <p>Biologics like dupilumab may shift from refractory-only to first-line use, especially for patients with comorbid atopic conditions. Key priorities include long-term safety data for investigational agents (cendakimab, lirentelimab, tezepelumab, etrasimod) and resolving the histologic–symptomatic disconnect seen with anti-IL-5 therapies.</p>
 
-        <p style="margin-top:var(--space-l)"><a class="btn" href="/research/">← All research</a></p>
+        <p class="back-link"><a class="btn" href="/research/">← All research</a></p>
       </div>
     </div>
   </main>

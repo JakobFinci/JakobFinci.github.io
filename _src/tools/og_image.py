@@ -1,7 +1,7 @@
 """Render the 1200x630 social-preview card to assets/og-image.png.
 
-Content-tooling only (uses Pillow). Field-notebook styling: warm paper,
-registration marks, the pixel portrait, name, and tagline.
+Content-tooling only (uses Pillow). The existing pixel portrait and site identity;
+no generated artwork, grid, or registration marks.
 
     python _src/tools/og_image.py
 """
@@ -9,6 +9,7 @@ registration marks, the pixel portrait, name, and tagline.
 from __future__ import annotations
 
 from pathlib import Path
+import tomllib
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -17,12 +18,10 @@ OUT = ROOT / "assets" / "og-image.png"
 PORTRAIT = ROOT / "medialib" / "me.png"
 
 W, H = 1200, 630
-PAPER = (242, 238, 228)
-GRID = (230, 224, 211)
-INK = (27, 26, 23)
-MUTED = (106, 101, 91)
-RUST = (162, 73, 44)
-BLUE = (51, 80, 126)
+PAPER = (248, 247, 242)
+INK = (36, 44, 41)
+MUTED = (85, 95, 89)
+GREEN = (48, 92, 80)
 
 
 def font(names: list[str], size: int) -> ImageFont.FreeTypeFont:
@@ -31,53 +30,32 @@ def font(names: list[str], size: int) -> ImageFont.FreeTypeFont:
             return ImageFont.truetype(n, size)
         except OSError:
             continue
-    return ImageFont.load_default()
+    raise RuntimeError("Install a supported font before regenerating the social image.")
 
 
 def main() -> None:
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
 
-    # Faint grid.
-    for x in range(0, W, 40):
-        d.line([(x, 0), (x, H)], fill=GRID, width=1)
-    for y in range(0, H, 40):
-        d.line([(0, y), (W, y)], fill=GRID, width=1)
-
-    # Frame + corner registration crosshairs.
-    d.rectangle([28, 28, W - 29, H - 29], outline=(184, 176, 160), width=1)
-    for cx, cy in [(28, 28), (W - 29, 28), (28, H - 29), (W - 29, H - 29)]:
-        d.line([(cx - 12, cy), (cx + 12, cy)], fill=RUST, width=2)
-        d.line([(cx, cy - 12), (cx, cy + 12)], fill=RUST, width=2)
-
-    serif_lg = font(["georgiab.ttf", "Georgia Bold.ttf", "pala.ttf", "georgia.ttf"], 74)
-    serif_sm = font(["georgia.ttf", "pala.ttf"], 34)
-    mono = font(["consola.ttf", "cour.ttf"], 24)
+    site = tomllib.loads((ROOT / "_src/data/site.toml").read_text(encoding="utf-8"))
+    serif_lg = font(["georgia.ttf", "Georgia.ttf", "DejaVuSerif.ttf"], 70)
+    sans = font(["segoeui.ttf", "Arial.ttf", "DejaVuSans.ttf"], 30)
+    small = font(["segoeui.ttf", "Arial.ttf", "DejaVuSans.ttf"], 24)
 
     left = 80
-    d.text((left, 96), "PORTFOLIO", font=mono, fill=RUST)
-    d.text((left, 150), 'Elias "Eliyahu"', font=serif_lg, fill=INK)
-    d.text((left, 232), "Suskind", font=serif_lg, fill=INK)
-    d.text((left, 348), "Engineer, researcher,", font=serif_sm, fill=MUTED)
-    d.text((left, 392), "and image-maker.", font=serif_sm, fill=MUTED)
-    d.line([(left, 470), (left + 360, 470)], fill=RUST, width=2)
-    d.text((left, 492), "jakobfinci.github.io", font=mono, fill=BLUE)
+    first, surname = site["site"]["title"].rsplit(" ", 1)
+    d.text((left, 160), first, font=serif_lg, fill=INK)
+    d.text((left, 248), surname, font=serif_lg, fill=INK)
+    d.text((left, 370), site["identity"]["tagline"], font=sans, fill=MUTED)
+    d.line([(left, 465), (W - left, 465)], fill=GREEN, width=2)
+    d.text((left, 495), site["site"]["url"].removeprefix("https://"), font=small, fill=GREEN)
 
-    # Portrait plate on the right.
-    portrait = Image.open(PORTRAIT).convert("RGB")
-    scale = 420 / portrait.height
-    portrait = portrait.resize(
-        (round(portrait.width * scale), 420), Image.NEAREST
-    )
-    px = W - portrait.width - 120
-    py = (H - portrait.height) // 2
-    d.rectangle(
-        [px - 14, py - 14, px + portrait.width + 13, py + portrait.height + 13],
-        fill=(251, 250, 245),
-        outline=(184, 176, 160),
-        width=1,
-    )
-    img.paste(portrait, (px, py))
+    # Keep the original pixels and transparency intact.
+    with Image.open(PORTRAIT) as original:
+        portrait = original.convert("RGBA")
+    px = W - portrait.width - 110
+    py = 465 - portrait.height
+    img.paste(portrait, (px, py), portrait)
 
     img.save(OUT, "PNG")
     print(f"wrote {OUT.relative_to(ROOT)} ({OUT.stat().st_size // 1024} KB)")

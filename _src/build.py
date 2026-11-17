@@ -7,7 +7,7 @@ output is committed and served as-is by GitHub Pages (.nojekyll disables the
 Ruby build), so there is no server-side build step to break.
 
     python _src/build.py            # build
-    python _src/build.py --check    # build to a temp dir and diff (CI drift)
+    python _src/build.py --check    # compare in memory, without writing files
 
 Add a page by adding data and a builder in `build_pages()`. Design tokens live
 in assets/css/site.css; nothing here emits inline styles.
@@ -100,10 +100,12 @@ def plain_img(rel: str, alt: str, *, cls: str = "", loading: str = "lazy",
 # --------------------------------------------------------------------------
 # Layout shell
 # --------------------------------------------------------------------------
-def nav_html(active: str) -> str:
+def nav_html(active: str, path: str) -> str:
     items = []
     for item in SITE["nav"]:
-        cur = ' aria-current="page"' if item["url"] == active else ""
+        cur = ""
+        if item["url"] == active:
+            cur = ' aria-current="page"' if item["url"] == path else ' aria-current="true"'
         items.append(f'<li><a href="{e(item["url"])}"{cur}>{e(item["label"])}</a></li>')
     return (
         '<nav class="site-nav" aria-label="Primary">\n      <ul>\n        '
@@ -112,11 +114,11 @@ def nav_html(active: str) -> str:
     )
 
 
-def header_html(active: str) -> str:
+def header_html(active: str, path: str) -> str:
     return f"""  <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">{e(S["title"])} <span class="reg" aria-hidden="true">/ES</span></a>
-    {nav_html(active)}
+      <a class="brand" href="/">{e(S["title"])}</a>
+    {nav_html(active, path)}
     </div>
   </header>"""
 
@@ -144,7 +146,7 @@ def footer_html() -> str:
 
 def shell(*, title: str, description: str, path: str, main_html: str,
           active: str = "", extra_head: str = "", jsonld: dict | list | None = None,
-          og_type: str = "website") -> str:
+          og_type: str = "website", body_class: str = "") -> str:
     url = canonical(path)
     ld = ""
     if jsonld is not None:
@@ -172,10 +174,10 @@ def shell(*, title: str, description: str, path: str, main_html: str,
   <meta name="twitter:description" content="{e(description)}">
   <meta name="twitter:image" content="{e(canonical(OG_IMAGE))}">{extra_head}{ld}
 </head>
-<body>
+<body class="{e(body_class)}">
   <a class="skip-link" href="#main">Skip to content</a>
-{header_html(active)}
-  <main id="main">
+{header_html(active, path)}
+  <main id="main" tabindex="-1">
 {main_html}
   </main>
 {footer_html()}
@@ -187,61 +189,42 @@ def shell(*, title: str, description: str, path: str, main_html: str,
 # --------------------------------------------------------------------------
 # Reusable components
 # --------------------------------------------------------------------------
-def project_card(p: dict) -> str:
+def project_entry(p: dict, heading: str = "h2") -> str:
     thumb = p.get("thumb")
-    media = ""
-    if thumb:
-        rel = thumb.lstrip("/")
-        media = f'<div class="card__media pixel">{plain_img(rel, p.get("thumb_alt", ""))}</div>'
-    status = p.get("status", "")
-    year = p.get("year", "")
-    meta = f'<span class="status status--{e(status)}">{e(status.replace("-", " "))}</span>'
-    if year:
-        meta += f'<span aria-hidden="true">·</span><span>{e(year)}</span>'
-    tags = "".join(f'<span class="tag">{e(d)}</span>' for d in p.get("disciplines", []))
-    link_label = p.get("link_label", "View project")
-    href = p.get("url") or p.get("external_url") or "#"
-    ext = ""
-    if not p.get("url") and p.get("external_url"):
-        ext = ' target="_blank" rel="noopener"'
-    return f"""      <article class="card">
-        {media}
-        <div class="card__body">
-          <p class="card__meta">{e(p.get("category", ""))}</p>
-          <h3 class="card__title">{e(p["title"])}</h3>
-          <p class="card__summary">{e(p["summary"])}</p>
-          <p class="card__meta" style="margin-top:.5rem">{meta}</p>
-          <div class="card__foot">{tags}</div>
-          <p style="margin-top:.75rem"><a class="btn" href="{e(href)}"{ext}>{e(link_label)} →</a></p>
+    media = plain_img(thumb.lstrip("/"), p.get("thumb_alt", "")) if thumb else ""
+    meta = [p["category"], p.get("year") or p["status"].replace("-", " ")]
+    return f"""      <article class="work-entry">
+        <div class="work-entry__image">{media}</div>
+        <div class="work-entry__body">
+          <p class="eyebrow">{e(" · ".join(meta))}</p>
+          <{heading}><a href="{e(p['url'])}">{e(p['title'])}</a></{heading}>
+          <p>{e(p['summary'])}</p>
         </div>
       </article>"""
 
 
-def collection_card(c: dict) -> str:
-    cover = c.get("cover")
-    if cover:
-        rel = cover.lstrip("/")
-        if rel in IMAGES:
-            href, w, h = photo_variant(rel, "thumb")
-            img = f'<img src="{e(href)}" alt="" width="{w}" height="{h}" loading="lazy" decoding="async">'
-        else:
-            img = plain_img(rel, "")
-        media = f'<div class="card__media">{img}</div>'
+def collection_entry(c: dict) -> str:
+    if c.get("cover"):
+        rel = c["cover"].lstrip("/")
+        href, w, h = photo_variant(rel, "thumb")
+        display, dw, _ = photo_variant(rel, "display")
+        img = (f'<img src="{e(href)}" srcset="{e(href)} {w}w, {e(display)} {dw}w" '
+               f'sizes="(max-width: 40rem) 90vw, 45vw" alt="" width="{w}" height="{h}" '
+               'loading="lazy" decoding="async">')
     else:
-        # Pixel collection: show first section image.
-        first = c["section"][0]["image"][0]["src"]
-        media = f'<div class="card__media pixel">{plain_img(first, "")}</div>'
-    return f"""      <a class="card" href="{e(c["url"])}">
-        {media}
-        <div class="card__body">
-          <p class="card__meta">{e(c["kind"].title())}</p>
-          <h3 class="card__title">{e(c["title"])}</h3>
-          <p class="card__summary">{e(c["summary"])}</p>
+        img = plain_img(c["section"][0]["image"][0]["src"], "")
+    kind = "Pixel art" if c["kind"] == "pixelart" else "Photography"
+    return f"""      <a class="collection-entry collection-entry--{e(c['kind'])}" href="{e(c['url'])}">
+        <div class="collection-entry__image">{img}</div>
+        <div>
+          <p class="eyebrow">{kind}</p>
+          <h2>{e(c['title'])} <span aria-hidden="true">↗</span></h2>
+          <p>{e(c['summary'])}</p>
         </div>
       </a>"""
 
 
-def gallery_from_section(section: dict, prefix: str, pixel: bool = False) -> str:
+def gallery_from_section(section: dict, pixel: bool = False) -> str:
     figs = []
     if "image" in section:
         entries = [(im["src"], im.get("caption", "")) for im in section["image"]]
@@ -259,8 +242,7 @@ def gallery_from_section(section: dict, prefix: str, pixel: bool = False) -> str
             if credit:
                 cap += f". {credit}"
             entries.append((k, cap))
-    for i, (rel, caption) in enumerate(entries, 1):
-        num = f"{prefix}-{i:02d}"
+    for rel, caption in entries:
         if pixel or rel not in IMAGES:
             w, h = dims_of(rel)
             dim = f' width="{w}" height="{h}"' if w else ""
@@ -272,13 +254,13 @@ def gallery_from_section(section: dict, prefix: str, pixel: bool = False) -> str
             thumb = f'<img src="{e(t_href)}" alt="{e(caption)}" width="{t_w}" height="{t_h}" loading="lazy" decoding="async">'
             full = d_href
         cap_html = (
-            f'<figcaption><span class="n">{num}</span><span>{e(caption)}</span></figcaption>'
+            f'<figcaption>{e(caption)}</figcaption>'
             if caption
             else ""
         )
         figs.append(
-            f'<figure><a href="{e(full)}" target="_blank" rel="noopener" '
-            f'aria-label="Open image {num} full size">{thumb}</a>{cap_html}</figure>'
+            f'<figure><a href="{e(full)}" '
+            f'aria-label="View full size: {e(caption)}">{thumb}</a>{cap_html}</figure>'
         )
     cls = "gallery gallery--pixel" if pixel else "gallery"
     return f'<div class="{cls}">\n        ' + "\n        ".join(figs) + "\n      </div>"
@@ -300,162 +282,88 @@ def citation_text(p: dict) -> str:
 # Pages
 # --------------------------------------------------------------------------
 def page_home() -> str:
-    featured_projects = [p for p in PROJECTS if p.get("featured")]
-    cur = "".join(
-        f'<div class="currently__item"><span class="currently__key">{e(c["key"])}</span>'
-        f'<span class="currently__val">{e(c["value"])}</span></div>'
-        for c in SITE["current"]
-    )
-    # Selected work = featured projects (which already include the two papers).
-    cards = "\n".join(project_card(p) for p in sorted(featured_projects, key=lambda p: p["order"]))
-    # Selected creative work.
-    creative = "\n".join(
-        collection_card(c) for c in sorted(COLLECTIONS, key=lambda c: c["order"])
-    )
-    me_w, me_h = dims_of("medialib/me.png")
+    # c0b2bb7 and 2c27c6d removed the Currently and Creative homepage sections.
+    # Keep those editorial decisions in the source, not just the generated page.
+    selected = [p for p in PROJECTS if p.get("featured") and p["status"] != "hidden"]
+    entries = "\n".join(project_entry(p, "h3") for p in sorted(selected, key=lambda p: p["order"]))
     main = f"""    <div class="container">
-      <section class="hero">
+      <section class="hero" aria-labelledby="home-title">
         <div class="hero__body">
-          <p class="eyebrow">Portfolio — {e(A["name"])} / {e(A["alt_name"])}</p>
-          <h1>{e(S["title"])}</h1>
-          <p class="hero__lede">{e(SITE["identity"]["tagline"])}</p>
-          <p class="hero__intro">{e(SITE["identity"]["positioning"])}</p>
-          <div class="btn-row">
-            <a class="btn btn--solid" href="/projects/">See the work</a>
-            <a class="btn" href="/about/#contact">Get in touch</a>
+          <p class="eyebrow">{e(SITE['identity']['tagline'])}</p>
+          <h1 id="home-title">Elias <span class="hero__alias">“Eliyahu”</span><br> Suskind</h1>
+          <p class="hero__intro">{e(SITE['identity']['positioning'])}</p>
+          <div class="hero__links">
+            <a href="/about/">A little about me →</a>
+            <a href="/about/#contact">Get in touch</a>
           </div>
         </div>
         <figure class="hero__portrait">
-          <span class="crosshair tl" aria-hidden="true"></span>
-          <span class="crosshair br" aria-hidden="true"></span>
-          <img src="/medialib/me.png" alt="Pixel-art portrait of Elias Suskind, arms crossed" width="{me_w}" height="{me_h}" fetchpriority="high">
-          <figcaption>Fig. — self-portrait, pixel</figcaption>
+          {plain_img('medialib/me.png', 'Pixel-art portrait of Elias Suskind, arms crossed', priority=True)}
         </figure>
       </section>
-
       <section aria-labelledby="work-h">
         <div class="section-head">
           <h2 id="work-h">Selected work</h2>
-          <span class="index"><a href="/projects/">All projects →</a></span>
+          <a href="/projects/">All projects →</a>
         </div>
-        <div class="card-grid">
-{cards}
-        </div>
-      </section>
-
-      <section aria-labelledby="now-h" style="margin-top:var(--space-2xl)">
-        <div class="section-head">
-          <h2 id="now-h">Currently</h2>
-          <span class="index">STATUS · {e(S["copyright_year"])}</span>
-        </div>
-        <div class="currently">{cur}</div>
-      </section>
-
-      <section aria-labelledby="creative-h" style="margin-top:var(--space-2xl)">
-        <div class="section-head">
-          <h2 id="creative-h">Creative work</h2>
-          <span class="index"><a href="/media/">All collections →</a></span>
-        </div>
-        <div class="card-grid">
-{creative}
-        </div>
+        <div class="work-list">{entries}</div>
       </section>
     </div>"""
     person = {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": A["name"],
-        "alternateName": A["alt_name"],
-        "url": BASE + "/",
+        "@context": "https://schema.org", "@type": "Person",
+        "name": A["name"], "alternateName": A["alt_name"], "url": BASE + "/",
         "image": canonical("/medialib/me.png"),
         "sameAs": [A["github"], A["linkedin"], A["researchgate"]],
     }
-    return shell(
-        title=f'{S["title"]} — engineer, researcher, image-maker',
-        description=S["description"],
-        path="/",
-        main_html=main,
-        active="/",
-        jsonld=person,
-    )
+    return shell(title=f'{S["title"]} — engineer, researcher, and creator',
+                 description=S["description"], path="/", main_html=main,
+                 active="/", jsonld=person, body_class="page--home")
 
 
 def page_projects() -> str:
-    visible = [p for p in PROJECTS if p.get("status") != "hidden"]
-    cards = "\n".join(project_card(p) for p in sorted(visible, key=lambda p: p["order"]))
+    visible = [p for p in PROJECTS if p["status"] != "hidden"]
+    entries = "\n".join(project_entry(p) for p in sorted(visible, key=lambda p: p["order"]))
     main = f"""    <div class="container">
-      <div class="page-head prose">
-        <p class="eyebrow">Index 01 — Projects</p>
-        <h1>Projects</h1>
-        <p class="page-head__lede">Engineering, research, and creative-technical work. Research write-ups live in <a href="/research/">Research</a>; image collections in <a href="/media/">Creative</a>.</p>
-      </div>
-      <div class="card-grid">
-{cards}
-      </div>
+      <div class="page-head"><h1>Projects</h1></div>
+      <div class="work-list">{entries}</div>
     </div>"""
-    return shell(
-        title=f'Projects — {S["title"]}',
-        description="Selected engineering, research, and creative-technical projects by Elias \"Eliyahu\" Suskind.",
-        path="/projects/",
-        main_html=main,
-        active="/projects/",
-    )
+    return shell(title=f'Projects — {S["title"]}',
+                 description='Engineering, research, and game development by Elias "Eliyahu" Suskind.',
+                 path="/projects/", main_html=main, active="/projects/")
 
 
 def page_washburn() -> str:
     p = next(p for p in PROJECTS if p["slug"] == "washburn")
-    rel = p["thumb"].lstrip("/")
-    tags = "".join(f'<span class="tag">{e(d)}</span>' for d in p.get("disciplines", []))
     main = f"""    <div class="container">
-      <div class="page-head prose">
-        <p class="eyebrow">Project — {e(p["category"])}</p>
-        <h1>{e(p["title"])}</h1>
-        <p class="page-head__lede">{e(p["summary"])}</p>
-        <p class="card__foot" style="margin-top:1rem">
-          <span class="status status--{e(p["status"])}">{e(p["status"].replace("-", " "))}</span>
-          {tags}
-        </p>
-      </div>
-      <figure class="hero__portrait" style="display:inline-block">
-        <span class="crosshair tl" aria-hidden="true"></span>
-        <span class="crosshair br" aria-hidden="true"></span>
-        {plain_img(rel, p.get("thumb_alt", ""))}
-      </figure>
-      <div class="prose stack" style="margin-top:var(--space-l)">
-        <div class="note">
-          <strong>Dossier in progress.</strong> Washburn is an in-development horror
-          farming simulator. Screenshots, design notes, tooling, and a playable build
-          will be published here as the project matures. In the meantime, project
-          updates surface on my <a href="{e(A["github"])}" target="_blank" rel="noopener" class="ext">GitHub</a>.
+      <div class="game-intro">
+        <figure class="game-emblem">{plain_img(p['thumb'].lstrip('/'), p['thumb_alt'], priority=True)}</figure>
+        <div class="page-head prose">
+          <p class="eyebrow">{e(p['category'])}</p>
+          <h1>{e(p['title'])}</h1>
+          <p class="page-head__lede">{e(p['summary'])} More to come soon.</p>
+          <p class="back-link"><a href="/projects/">← All projects</a></p>
         </div>
-        <p><a class="btn" href="/projects/">← Back to all projects</a></p>
       </div>
     </div>"""
-    return shell(
-        title=f'{p["title"]} — {S["title"]}',
-        description=p["summary"],
-        path="/projects/washburn/",
-        main_html=main,
-        active="/projects/",
-    )
+    return shell(title=f'{p["title"]} — {S["title"]}', description=p["summary"],
+                 path="/projects/washburn/", main_html=main, active="/projects/",
+                 body_class="page--washburn")
 
 
 def page_research() -> str:
     items = []
-    for i, p in enumerate(sorted(PAPERS, key=lambda p: p["order"]), 1):
+    for p in sorted(PAPERS, key=lambda p: p["order"]):
         meta = [p["kind"], f'{p["month"]} {p["year"]}']
         if p.get("doi"):
             meta.append(f'DOI {p["doi"]}')
         meta_html = "".join(f"<span>{e(m)}</span>" for m in meta)
         items.append(f"""      <li class="index-list__item">
-        <span class="index-list__num">{i:02d}</span>
         <h2 class="index-list__title"><a href="{e(p["url"])}">{e(p["title"])}</a></h2>
         <p class="index-list__meta">{meta_html}</p>
         <p class="index-list__desc">{e(p["lead"])}</p>
       </li>""")
     main = f"""    <div class="container">
       <div class="page-head prose">
-        <p class="eyebrow">Index 02 — Research &amp; publications</p>
         <h1>Research &amp; publications</h1>
         <p class="page-head__lede">Peer-reviewed and undergraduate research across biochemistry, immunology, and the life sciences. Full list on my <a href="{e(A["researchgate"])}" target="_blank" rel="noopener" class="ext">ResearchGate</a>.</p>
       </div>
@@ -509,7 +417,7 @@ def page_paper(p: dict) -> str:
 {fig_html}
       <div class="prose stack">
 {body}
-        <p style="margin-top:var(--space-l)"><a class="btn" href="/research/">← All research</a></p>
+        <p class="back-link"><a class="btn" href="/research/">← All research</a></p>
       </div>
     </div>"""
     article = {
@@ -531,21 +439,21 @@ def page_paper(p: dict) -> str:
         active="/research/",
         jsonld=article,
         og_type="article",
+        body_class="page--paper",
     )
 
 
 def page_media() -> str:
-    cards = "\n".join(
-        collection_card(c) for c in sorted(COLLECTIONS, key=lambda c: c["order"])
+    entries = "\n".join(
+        collection_entry(c) for c in sorted(COLLECTIONS, key=lambda c: c["order"])
     )
     main = f"""    <div class="container">
       <div class="page-head prose">
-        <p class="eyebrow">Index 03 — Creative work</p>
         <h1>Creative work</h1>
-        <p class="page-head__lede">Photography and pixel art. Each collection opens to a full gallery — click any frame to view it larger.</p>
+        <p class="page-head__lede">Photography and pixel art.</p>
       </div>
-      <div class="card-grid">
-{cards}
+      <div class="collection-list">
+{entries}
       </div>
     </div>"""
     return shell(
@@ -560,9 +468,8 @@ def page_media() -> str:
 def page_photography_index() -> str:
     photo = [c for c in COLLECTIONS if c["kind"] == "photography"]
     items = []
-    for i, c in enumerate(sorted(photo, key=lambda c: c["order"]), 1):
+    for c in sorted(photo, key=lambda c: c["order"]):
         items.append(f"""      <li class="index-list__item">
-        <span class="index-list__num">{i:02d}</span>
         <h2 class="index-list__title"><a href="{e(c["url"])}">{e(c["title"])}</a></h2>
         <p class="index-list__desc">{e(c["summary"])}</p>
       </li>""")
@@ -571,7 +478,7 @@ def page_photography_index() -> str:
         "Black &amp; white Pacific Northwest film photography",
         "Assorted digital photography",
     ]
-    up_html = "".join(f"<li>{u} <span class=\"tag\">In preparation</span></li>" for u in upcoming)
+    up_html = "".join(f"<li>{u}</li>" for u in upcoming)
     main = f"""    <div class="container">
       <div class="page-head prose">
         <p class="eyebrow">Creative — Photography</p>
@@ -581,7 +488,7 @@ def page_photography_index() -> str:
       <ol class="index-list">
 {chr(10).join(items)}
       </ol>
-      <div class="prose" style="margin-top:var(--space-l)">
+      <div class="prose back-link">
         <h2>In preparation</h2>
         <ul class="prose">{up_html}</ul>
       </div>
@@ -597,26 +504,25 @@ def page_photography_index() -> str:
 
 def page_collection(c: dict) -> str:
     pixel = c["kind"] == "pixelart"
-    prefix = c["slug"][:3].upper()
     sections = []
     for s in c.get("section", []):
         head = ""
         if s.get("title"):
-            head = f'<h2 style="margin-bottom:var(--space-m)">{e(s["title"])}</h2>'
-        note = f'<div class="note" style="margin-bottom:var(--space-m)">{s["note"]}</div>' if s.get("note") else ""
-        gal = gallery_from_section(s, prefix, pixel=pixel)
-        sections.append(f'<section style="margin-top:var(--space-l)">{head}{note}{gal}</section>')
+            head = f'<h2>{e(s["title"])}</h2>'
+        note = f'<div class="collection-note prose">{s["note"]}</div>' if s.get("note") else ""
+        gal = gallery_from_section(s, pixel=pixel)
+        sections.append(f'<section class="collection-section">{head}{note}{gal}</section>')
     intro = c.get("intro", "")
     intro_html = f'<p class="page-head__lede">{intro}</p>' if intro else ""
     back = "/media/photography/" if c["kind"] == "photography" else "/media/"
     main = f"""    <div class="container">
       <div class="page-head prose">
-        <p class="eyebrow">Collection — {e(c["kind"].title())}</p>
+        <p class="eyebrow">{'Pixel art' if pixel else 'Photography'}</p>
         <h1>{e(c["title"])}</h1>
         {intro_html}
       </div>
 {chr(10).join(sections)}
-      <p style="margin-top:var(--space-xl)"><a class="btn" href="{back}">← Back</a></p>
+      <p class="back-link"><a class="btn" href="{back}">← Back</a></p>
     </div>"""
     return shell(
         title=f'{c["title"]} — {S["title"]}',
@@ -624,6 +530,7 @@ def page_collection(c: dict) -> str:
         path=c["url"],
         main_html=main,
         active="/media/",
+        body_class="page--pixelart" if pixel else "page--photography",
     )
 
 
@@ -644,19 +551,17 @@ def page_about() -> str:
     body = (CONTENT / "about.html").read_text(encoding="utf-8")
     main = f"""    <div class="container">
       <div class="page-head prose">
-        <p class="eyebrow">Index 04 — About</p>
         <h1>About</h1>
       </div>
       <div class="prose stack">
 {body}
       </div>
 
-      <section id="contact" style="margin-top:var(--space-2xl)">
+      <section id="contact" class="contact-section">
         <div class="section-head">
           <h2>Contact</h2>
-          <span class="index">Reach out</span>
         </div>
-        <p class="lede" style="margin-bottom:var(--space-m)">Happy to talk about research, engineering, or a photo shoot.</p>
+        <p class="lede">Happy to talk about research, engineering, or a photo shoot.</p>
         <div class="contact-list">
           {"".join(rows)}
         </div>
@@ -672,29 +577,9 @@ def page_about() -> str:
 
 
 def page_404() -> str:
-    main = """    <div class="container">
-      <div class="notfound">
-        <p class="code">404</p>
-        <h1>Page not found</h1>
-        <p class="lede center" style="margin:var(--space-m) auto 0">
-          That page doesn't exist — it may have moved. Try one of these:
-        </p>
-        <div class="btn-row" style="justify-content:center;margin-top:var(--space-l)">
-          <a class="btn btn--solid" href="/">Home</a>
-          <a class="btn" href="/projects/">Projects</a>
-          <a class="btn" href="/research/">Research</a>
-          <a class="btn" href="/media/">Creative</a>
-          <a class="btn" href="/about/">About</a>
-        </div>
-      </div>
-    </div>"""
-    doc = shell(
-        title=f'404 — {S["title"]}',
-        description="Page not found.",
-        path="/404.html",
-        main_html=main,
-    )
-    return doc
+    # 1823946 + 379f173 deliberately restored the full-screen Rick Astley joke.
+    # Keep its own layout and real video controls, not the portfolio shell.
+    return (CONTENT / "404.html").read_text(encoding="utf-8")
 
 
 def redirect_page(to: str, title: str) -> str:
@@ -703,6 +588,7 @@ def redirect_page(to: str, title: str) -> str:
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Redirecting — {e(title)}</title>
   <link rel="canonical" href="{e(url)}">
   <meta http-equiv="refresh" content="0; url={e(to)}">
@@ -710,7 +596,6 @@ def redirect_page(to: str, title: str) -> str:
 </head>
 <body>
   <p>This page has moved to <a href="{e(to)}">{e(url)}</a>.</p>
-  <script>location.replace({json.dumps(to)});</script>
 </body>
 </html>
 """
