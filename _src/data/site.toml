@@ -39,6 +39,10 @@ url = "/media/"
 label = "About"
 url = "/about/"
 
+[[nav]]
+label = "Fun things"
+url = "/fun-things/"
+
 [media_photo]
 src = "medialib/photography/goldenr/APR/cherrydragon/8.JPG"
 caption = "Cherry Dragon series — frame 9. Credit: Eliyahu Suskind"

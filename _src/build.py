@@ -598,6 +598,32 @@ def page_about() -> str:
     )
 
 
+def page_fun_things() -> str:
+    body = (CONTENT / "fun-things.html").read_text(encoding="utf-8")
+    main = f"""    <div class="container">
+      <div class="about-layout">
+        <div class="about-sidebar">
+          <h1>Fun things</h1>
+          <nav aria-label="Fun things sections">
+            <a href="#all-tomorrows">All Tomorrows</a>
+            <a href="#bee-movie">The Bee Movie incident</a>
+            <a href="#tea">Di-Er Teamaster</a>
+            <a href="#pen-pal">Letters to a Pre-Scientist</a>
+          </nav>
+        </div>
+        <div class="prose stack">{body}</div>
+      </div>
+    </div>"""
+    return shell(
+        title=f'Fun things — {S["title"]}',
+        description="Side projects, curious participations, and other things Elias Suskind is glad to have done.",
+        path="/fun-things/",
+        main_html=main,
+        active="/fun-things/",
+        body_class="page--about",
+    )
+
+
 def page_404() -> str:
     # 1823946 + 379f173 deliberately restored the full-screen Rick Astley joke.
     # Keep its own layout and real video controls, not the portfolio shell.
@@ -657,6 +683,7 @@ def build_pages() -> dict[str, str]:
     for c in COLLECTIONS:
         pages[c["url"].strip("/") + "/index.html"] = page_collection(c)
     pages["about/index.html"] = page_about()
+    pages["fun-things/index.html"] = page_fun_things()
     pages["404.html"] = page_404()
 
     # Redirect stubs for previously-published URLs.
@@ -670,7 +697,7 @@ def build_pages() -> dict[str, str]:
     routes += [p["url"] for p in PAPERS]
     routes += ["/media/", "/media/photography/"]
     routes += [c["url"] for c in COLLECTIONS]
-    routes += ["/about/"]
+    routes += ["/about/", "/fun-things/"]
     pages["sitemap.xml"] = build_sitemap(routes)
     pages["robots.txt"] = build_robots()
     return pages
